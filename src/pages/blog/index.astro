@@ -1,21 +1,32 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+
+import GlobalLayout from 'src/layouts/GlobalLayout.astro';
+import ArticleCard from 'src/components/ArticleCard';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
+<GlobalLayout title="مقاله‌ها" description="همهٔ مقاله‌های ۱۰۰۰۰روز"  >
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
+	<section class="max-width--page padding--page rtl">
+		<ul class='card-grid'>
+			{
+						posts.map((post) => (
+							    <ArticleCard
+                  title={post.title}
+                  excerpt={post.description}
+                  slug={post.slug}
+                  link={`/posts/${post.slug}`}
+                />
+						))
+					}
+				</ul>
+			</section>
+</GlobalLayout>
+<style>
 			ul {
 				list-style-type: none;
 				padding: unset;
@@ -32,23 +43,9 @@ const posts = (await getCollection('blog')).sort(
 				color: #8e32dc;
 			}
 		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
+
+<!-- 
+<li>
 								<FormattedDate date={post.data.pubDate} />
 								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+							</li> -->

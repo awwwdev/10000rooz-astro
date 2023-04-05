@@ -1,0 +1,26 @@
+---
+const {
+  name = '', description = '', pageLink = null, downloadLink = '', downloadFileName, children = null,
+} = Astro.props ;
+import { ReceiveSquare } from 'iconsax-react';
+
+---
+    <div class="card padding border-radius flex column gap ">
+      <div style={{ marginBottom: 'auto' }}>
+        <h3 class="card-title font-size--xl">{name}</h3>
+        <p class="margin-top--xs">{description}</p>
+        {children}
+      </div>
+      <div class="flex a-center gap margin-top--xl">
+        <a href={downloadLink} download={downloadFileName} class="button bg-primary clr-white">
+          <!-- <Icon icon={ReceiveSquare} alt="" /> -->
+          دریافت
+        </a>
+        {pageLink
+          && (
+            <a href={pageLink} class="">
+              وببرگ اختصصاصی ابزار
+            </a>
+          )}
+      </div>
+    </div>

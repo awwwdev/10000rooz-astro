@@ -11,7 +11,7 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
+const { title = "راهنمای مسیر شغلی", description, image = '/placeholder-social.jpg' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -24,12 +24,15 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
+<title>{title} | ۱۰۰۰۰روز</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
+<meta property="og:lang" content="fa" />
+<meta property="og:locale" content="fa" />
+<meta property="og:site_name" content="۱۰۰۰۰روز" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -41,3 +44,55 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+
+ <!-- {process.env.NEXT_PUBLIC_ENV !== 'production' && (
+            <>
+              <meta name="googlebot" content="noindex" />
+              <meta name="robots" content="noindex" />
+              <meta name="robots" content="nofollow" />
+            </>
+          )} -->
+          <meta name="theme-color" content="#000000" />
+           <!-- <link rel="manifest" href="/manifest.json" /> -->
+          <link rel="icon" href="/favicon.png" sizes="any" />
+          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+            <!-- Essential META Tags  -->
+          <meta property="og:title" content="۱۰۰۰۰روز | راهنمای مسیر شغلی" />
+          <meta property="og:type" content="website" />
+           <!-- <meta
+            property='og:image'
+            content=''
+          />  -->
+          <meta property="og:url" content="https://10000rooz.com" />
+          <meta name="twitter:card" content="summary_large_image" />
+
+           <!-- Non-Essential Meta Tags, But Recommended  -->
+          <meta property="og:description" content="راهنمای مسیر شغلی" />
+          <meta property="og:site_name" content="10000rooz" />
+          <meta name="twitter:image:alt" content="۱۰۰۰۰روز | راهنمای مسیر شغلی" />
+
+           <!-- TO SHOW LARGE THUMBNAILS IN GOOGLE RESULTS  -->
+          <meta
+            name="robots"
+            content="max-snippet:20, max-image-preview:large"
+          />
+          <meta name="description" content="وبسایت ۱۰۰۰۰روز" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+     
+  <script
+        defer
+        src="https://www.googletagmanager.com/gtag/js?id=G-PYZKQQGW8Z"
+      />
+      <script
+        id="gtag-init"
+        defer>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PYZKQQGW8Z', {
+            page_path: window.location.pathname,
+          });
+      </script>
+
+      <slot />

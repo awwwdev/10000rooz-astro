@@ -1,0 +1,46 @@
+---
+import GlobalLayout from 'src/layouts/GlobalLayout.astro';
+import ToolCard from 'src/components/ToolCard.astro';
+---
+      <GlobalLayout
+        title="ابزار‌ها"
+        description="همهٔ ابزارهای ۱۰۰۰۰روز"
+        canonical="https://10000rooz.com/tools/"
+      />
+      <div class="layout:stack padding-bloack--xl max-width--page ">
+        <h1>ابزارها</h1>
+        <p>
+          ابزارهای کاربردی برای مسیر شغلی، ساخته یا ترجمه شده بدست تیم ۱۰۰۰۰روز
+        </p>
+        <div class="card-grid gap--l margin-top--xl">
+          <ToolCard
+            name="گزارش نظرسنجی انتخاب رشته"
+            description="نگاهی داده‌محور به انتخاب رشته"
+            pageLink="/surveys/major"
+            downloadLink="/reports/10000rooz-major-report.pdf"
+            downloadFileName="10000rooz-major-report.pdf"
+          />
+          <ToolCard
+            name="سالنمای ۱۴۰۱"
+            description="تقویمی کابردی برای برنامه‌ریزی ۱۴۰۱"
+            pageLink="/1401cal"
+            downloadLink="/tools/10000rooz-1401cal.zip"
+            downloadFileName="10000rooz-1401cal.zip"
+          />
+          <ToolCard
+            name=" هورمون‌ها سر کار"
+            description="راهنمای دیداری برای شناخت کارکرد هوردمون‌ها در کار"
+            // pageLink="/1401cal"
+            downloadLink="/tools/10000rooz-EDSO.pdf"
+            downloadFileName="10000rooz-EDSO.pdf"
+          />
+          <ToolCard
+            name="تمرین‌های کتاب طراحی زندگی  "
+            description="دفترکاری برای تمرین‌های طراحی زندگی"
+            pageLink="/books/designing-your-life"
+            downloadLink="/tools/10000rooz-designing-your-life-workbook.pdf"
+            downloadFileName="10000rooz-designing-your-life-workbook.pdf"
+          />
+        </div>
+      </div>
+

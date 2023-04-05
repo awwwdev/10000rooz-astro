@@ -1,0 +1,36 @@
+import { NextSeo } from 'next-seo';
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}
+
+const Contact = () => {
+  return (
+    <>
+      <NextSeo
+        title="تماس با ۱۰۰۰۰روز"
+        description="روش‌های ارتباط با ۱۰۰۰۰روز"
+        canonical="https://10000rooz.com/contact/"
+      />
+      <div className="max-width--article padding--page layout:stack">
+        <h1>تماس با ما</h1>
+        <p>
+          لطفاً سؤالات و پیشنهادات خود را از طریق ایمیل زیر با ما در میان بگذارید.
+        </p>
+        <p>
+          <a href="mailto:10000rooz@gmail.com">ایمیل ما (کلیک کنید)</a>
+        </p>
+        {/* <p>
+      در صورت تمایل به همکاری با ما موقعیت‌های شغلی را
+      {' '}
+      <a href="http://10000rooz.ir/work-with-us/">در این صفحه</a>
+      {' '}
+      مشاهده نمایید.
+    </p> */}
+      </div>
+    </>
+  );
+};
+export default Contact;
