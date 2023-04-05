@@ -1,0 +1,41 @@
+---
+import ArticleCard from './ArticleCard.astro';
+
+const {
+  title, slugs, getBlogDataBySlug, ...rest 
+} = Astro.props; 
+
+---
+    <section aria-label={title} class={`section ${rest.class}`}>
+      <div class="column max-width--page layout-stack">
+        <h2>{title}</h2>
+        <div class="card-grid gap--l">
+          {slugs.map((slug) => {
+            const p = getBlogDataBySlug(slug);
+            return (
+              <ArticleCard
+                title={p.title}
+                excerpt={p.description}
+                slug={p.slug}
+                link={`/posts/${p.slug}`}
+                tags={p.tags}
+                features={p.features}
+              />
+            );
+          })}
+          <slot />
+        </div>
+      </div>
+    </section>
+<style lang='scss'>
+  
+.section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h2 {
+    color: var(--clr-gray-9);
+  }
+}
+</style>

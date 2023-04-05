@@ -1,40 +1,203 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import GlobalLayout from 'src/layouts/GlobalLayout.astro';
+// import ParkLogo from '@/public/logos/shariftechpark-logo.svg';
+// import BanaLogo from '@/public/logos/bana-logo.svg';
+// import DigargoonLogo from '@/public/logos/digargoon-logo.svg';
+// import KarbonLogo from '@/public/logos/karbon-logo.svg';
+// import BistTaSiLogo from '@/public/logos/bist-ta-si-logo.svg';
+// import { allResources } from '@/.contentlayer/generated';
+// import styles from '@/styles/home.module.scss';
+
+import { getCollection } from 'astro:content';
+import ArticleCard from 'src/components/ArticleCard.astro';
+import Banner from 'src/components/Home/Banner.astro';
+import ArticleSection from 'src/components/ArticleSection.astro';
+import SponsorCard from 'src/components/SponsorCard.astro';
+import PartnerCard from 'src/components/PartnerCard.astro';
+
+const { default: ParkLogo } = await import(`/public/logos/shariftechpark-logo.svg?raw`);
+const { default: BanaLogo } = await import(`/public/logos/bana-logo.svg?raw`);
+const { default: DigargoonLogo } = await import(`/public/logos/digargoon-logo.svg?raw`);
+const { default: KarbonLogo } = await import(`/public/logos//karbon-logo.svg?raw`);
+const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.svg?raw`);
+
+ const selectedSlugs = [
+    'choose-major',
+    'get-help-with-choosing-major',
+    'common-mistakes-in-choosing-college-major',
+    'get-help-with-choosing-major',
+    'admission-mechanism',
+    'research-majors',
+    'comparing-universities',
+    'choose-job',
+    'confusion-in-choosing-career',
+    'why-mbti-is-bad-for-choosing-job',
+    'get-a-job',
+    'resume-writing',
+    'job-interview',
+    'when-passion-leads-to-born-out',
+    'job-satisfaction',
+    'job-interview',
+  ];
+
+
+	const posts = (await getCollection('blog')).filter((p) => { return selectedSlugs.includes(p.slug); }).map((p) => {
+    return {
+      title: p.title,
+      slug: p.slug,
+      description: p.description,
+      tags: p.tags,
+      image: p.image,
+    };
+  });
+
+	  const getBlogDataBySlug = (slug) => { return posts.find((post) => { return post.slug === slug; }); };
 ---
 
-<GlobalLayout>
+<GlobalLayout 
+        title="راهنمای مسیر شغلی"
+        description="۱۰۰۰۰روز پروژه‌ای است برای افزایش دانش و آگاهی درباره ساختن زندگی کاری بهتر"
+        canonical="https://10000rooz.com/"
+     >
+      <div class={`page max-width--page layout:stack gap--xxl`}>
+        <Banner />
+        <div class="layout-stack gap--xxl">
+          <ArticleSection
+            title="انتخاب رشته"
+            slugs={[
+              'choose-major',
+              'get-help-with-choosing-major',
+              'common-mistakes-in-choosing-college-major',
+              'get-help-with-choosing-major',
+              'admission-mechanism',
+              'research-majors',
+              'comparing-universities',
+            ]}
+            getBlogDataBySlug={getBlogDataBySlug}
+            class="major-cat-clr"
+          >
+            <ArticleCard
+              class="articleCardWP"
+              slug="/surveys/major"
+              link="/surveys/major"
+              excerpt="انتخاب رشته یکی از مهم‌ترین مراحل زندگی ما به حساب می‌آید و بسیار مهم است که با اطلاعات کافی به سراغ آن برویم. این گزارش، ماحصل تجربیات ۲۲۶۹ نفر پاسخ‌دهنده است و مطالعهٔ آن می‌تواند دید بسیار خوبی نسبت به موضوع انتخاب رشته بدهد."
+              title="نگاهی داده‌محور به مسئلهٔ انتخاب رشته"
 
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+            />
+          </ArticleSection>
+          <ArticleSection
+            title="انتخاب شغل"
+            slugs={[
+              'choose-job',
+              'confusion-in-choosing-career',
+              'why-mbti-is-bad-for-choosing-job',
+              // 'wrong-beliefs',
+            ]}
+            getBlogDataBySlug={getBlogDataBySlug}
+            class="career-cat-clr"
+          />
+          <ArticleSection
+            title="کار پیدا کردن"
+            slugs={[
+              'get-a-job',
+              'resume-writing',
+              'job-interview',
+            ]}
+            getBlogDataBySlug={getBlogDataBySlug}
+          />
+          <ArticleSection
+            title="در محل کار"
+            slugs={[
+              'when-passion-leads-to-born-out',
+              'job-satisfaction',
+              'job-interview',
+            ]}
+            getBlogDataBySlug={getBlogDataBySlug}
+            class="workplace-cat-clr"
+          />
+
+          <section aria-label="حامیان" class={`section layout:stack gap--xxl`}>
+            <h2>حامیان </h2>
+            <div class={`max-width--page logoWrapper`}>
+              <SponsorCard
+                name="پارک علم و فناوری دانشگاه صنعتی شریف"
+                description="حامی راه‌اندازی ۱۰۰۰۰روز"
+                Logo={ParkLogo}
+                link="https://techpark.sharif.ir/"
+              />
+              <SponsorCard
+                name="شتابدهنده استعداد بانا"
+                description="حامی گزارش انتخاب رشته"
+                Logo={BanaLogo}
+                link="https://banaacc.ir/"
+              />
+            </div>
+          </section>
+          <section aria-label="همراهان " class={`section layout:stack gap--xxl`}>
+            <h2>همراهان </h2>
+            <div class="max-width--page flex wrap gap--xxl j-center ">
+              <PartnerCard
+                name="آژانس دیزاین دیگرگون "
+                description="همراه ۱۰۰۰۰روز"
+                Logo={DigargoonLogo}
+                link="https://digargoon.com/"
+              />
+              <PartnerCard
+                name="بیست‌تا‌سی"
+                description="همراه ۱۰۰۰۰روز"
+                Logo={BistTaSiLogo}
+                link="https://20ta30.com/"
+              />
+              <PartnerCard
+                name="کاربن"
+                description="همراه ۱۰۰۰۰روز"
+                Logo={KarbonLogo}
+                link="https://karbon.plus/"
+              />
+            </div>
+          </section>
+        </div>
+      </div>
 
 </GlobalLayout>
+<style lang="scss">
+
+
+
+
+
+
+.page {
+  padding-block-end: var(--padding--xl);
+}
+
+.articleCardWP {
+  background: var(--clr-primary-4);
+  color: var(--clr-gray-11);
+
+  h3 {
+    color: var(--clr-primary-10);
+  }
+
+  box-shadow: none;
+}
+
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--gap--xl);
+  justify-content: center;
+
+  @media screen and (max-width: 45rem) {
+    flex-direction: column;
+  }
+
+  .logo {
+    height: 3rem;
+    /* min-width: 5rem; */
+    /* max-width: 7rem; */
+  }
+}
+</style>

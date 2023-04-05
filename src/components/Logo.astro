@@ -1,9 +1,13 @@
 ---
-import LogoSvg from '@/public/logos/10000rooz-logo-2.svg';
+export interface Props {
+}
 
+const { default: innerHTML } = await import(`/public/logos/10000rooz-logo-2.svg?raw`);
 ---
     <span class="logoImage">
-      <LogoSvg class="logoSvg" />
+    <!-- <LogoSvg class="logoSvg" /> -->
+      <Fragment class='logoSvg' set:html={innerHTML} />
+
     </span>
 <style>
   .logoImage {

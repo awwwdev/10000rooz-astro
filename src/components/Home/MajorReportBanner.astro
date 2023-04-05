@@ -1,31 +1,3 @@
-import { ReceiveSquare } from 'iconsax-react';
-import styles from '@/styles/banner.module.scss';
-import { Icon, Link } from '../uikit';
-
-const HomeBanner = () => {
-  console.log();
-
-  return (<DefaultBanner />);
-  // return (<MajorReportBanner />);
-};
-
-export default HomeBanner;
-
-const DefaultBanner = () => {
-  return (
-    <section aria-label="مقدمه" className={`${styles.hero} full-width flex a-center`}>
-      <div className="flex column max-width--page ">
-        <p className={styles.websiteTitle}>۱۰۰۰۰روز</p>
-        <p className={styles.bannerFirstSentence}>۴۰ سال، هر سال ۵۲ هفته، هر هفته ۵ روز</p>
-        <p className={styles.bannerSecondSentence}>
-          هر کدام از ما حدوداً ۱۰۰۰۰ روز از عمرمان را مشغول کار کردن هستیم.
-          پروژه ۱۰۰۰۰روز تلاشی است برای بهتر زندگی کردن این بخش از عمرمان!
-        </p>
-      </div>
-    </section>
-  );
-};
-
 export const MajorReportBanner = () => {
   return (
     <Link href="/surveys/major">

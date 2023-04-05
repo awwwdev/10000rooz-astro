@@ -1,0 +1,28 @@
+---
+const {
+  name, description, Logo, link,
+} = Astro.props;
+
+---
+    <a
+      href={link}
+      style="text-decoration: none"
+      target="_blank"
+      rel="noreferrer"
+      class="partnerCard flex column gap--l"
+    >
+      <Logo style="width: 10rem; height: 5rem;" />
+      <p class="font-size align:center">{name}</p>
+      {/* <p className="bold">{description}</p> */}
+    </a>
+
+    <style lang="scss">
+  .partnerCard {
+  border-radius: var(--border-radius);
+  background: var(--clr-gray-5);
+  padding: var(--padding) var(--padding--xl);
+}
+
+
+
+    </style>
