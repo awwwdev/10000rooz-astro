@@ -1,0 +1,64 @@
+// ============================================================
+// SCROLL BARS 
+// ============================================================
+
+* {
+  /* Customizing scrollbar for firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb-color) var(--scroll-background-color);
+  scrollbar-color: var(--scroll-thumb-color) var(--scroll-background-color);
+}
+
+/* Customizing scrollbar for chrome */
+*::-webkit-scrollbar {
+  height: 1rem;
+  width: 1rem;
+  margin: 2rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scroll-background-color);
+  border-radius: var(--border-radius--pill);
+  margin: 0 0.2rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb-color);
+  border-radius: var(--border-radius--pill);
+}
+
+
+
+
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body::selection {
+  color: var(--text-color-inverse);
+  /* 🚧 change to a shade of primary color */
+  background: var(--clr-primary-4);
+}
+
+
+button {
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+
+input {
+  color: var(--text-color);
+  background-color: var(--input-background);
+}
+
+
+.my-card {
+  padding: calc( 1.3 * var(--padding));
+  
+}

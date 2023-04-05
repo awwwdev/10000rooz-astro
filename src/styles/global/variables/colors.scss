@@ -1,0 +1,49 @@
+@use "radix-color";
+
+:root {
+  /* ☀️🌘 HANDLING DARK AND LIGHT */
+  --ON: initial;
+  --OFF: ;
+}
+
+.light-theme {
+  --light: var(--ON);
+  --dark: var(--OFF);
+}
+
+.dark-theme {
+  --light: var(--OFF);
+  --dark: var(--ON);
+}
+
+/*  ⚪⚫ NEUTRAL COLORS ============================== */
+
+
+
+@include radix-color.create($name: "--clr-gray", $radix-pigment: "gray");
+
+
+/*  🔵🟢🟡🔴 FUNCTIONAL COLORS (INFO, SUCCESS, WARNING, ERROR) ================== */
+
+@include radix-color.create($name: "--clr-info", $radix-pigment: "blue");
+@include radix-color.create($name: "--clr-success", $radix-pigment: "grass");
+@include radix-color.create($name: "--clr-warning", $radix-pigment: "yellow");
+@include radix-color.create($name: "--clr-error", $radix-pigment: "red");
+
+/* 🎨🎨🎨 BRAND COLORS  ======================================== */
+@include radix-color.create($name: "--clr-primary", $radix-pigment: "blue");
+@include radix-color.create($name: "--clr-secondary", $radix-pigment: "violet");
+
+:root {
+  --background-color: var(--gray-1);
+  --background-color-s: var(--clr-gray-2);
+  --background-color-xs: var(--clr-gray-3);
+
+  --text-color: var(--gray-11);
+  --text-color-inverse: var(--gray-2);
+  --text-color-s: var(--gray-10);
+  --text-color-xs: var(--gray-9);
+  --text-color-xxs: var(--gray-8);
+  --hover-color: var(--clr-primary-12);
+  // add later: --focus-color, active-color, disabled-color
+}

@@ -1,0 +1,17 @@
+.button {
+  line-height: 1;
+  outline: none;
+
+  :hover {
+    color: var(--clr-primary);
+    color: #21aa74; // to match major report banner
+  }
+
+
+  padding: var(--padding--s);
+  padding-right: 0;
+}
+
+.svg {
+  margin-inline-start: 0 !important;
+}

@@ -1,0 +1,69 @@
+:root {
+  --max-width--page: min(90vw, 80rem);
+  --max-width--article: min(90vw, 55rem);
+  // --max-width--article: min(90vw, 59rem); //for figma
+
+
+  --unit-size: 1rem;
+
+  @media screen and (max-width: 50rem) {
+    --unit-size: 0.8rem;
+  }
+
+  @media screen and (max-width: 30rem) {
+    --unit-size: 0.6rem;
+  }
+
+
+  $ratio: 1.5;
+  --ratio: $ratio;
+
+  $pow0: 1;
+  $pow1: $pow0 * $ratio;
+  $pow2: $pow1 * $ratio;
+  $pow3: $pow2 * $ratio;
+  $pow4: $pow3 * $ratio;
+  $pow5: $pow4 * $ratio;
+
+  --padding--xxxxs: calc(var(--padding) / #{$pow5});
+  --padding--xxxs: calc(var(--padding) / #{$pow4});
+  --padding--xxs: calc(var(--padding) / #{$pow3});
+  --padding--xs: calc(var(--padding) / #{$pow2});
+  --padding--s: calc(var(--padding) / #{$pow1});
+  --padding: calc(var(--unit-size) * 2);
+  --padding--l: calc(var(--padding) * #{$pow1});
+  --padding--xl: calc(var(--padding) * #{$pow2});
+
+  --border-radius--xxxs: calc(var(--border-radius) / #{$pow4});
+  --border-radius--xxs: calc(var(--border-radius) / #{$pow3});
+  --border-radius--xs: calc(var(--border-radius) / #{$pow2});
+  --border-radius--s: calc(var(--border-radius) / #{$pow1});
+  --border-radius: calc(var(--unit-size) * 1);
+  --border-radius--l: calc(var(--border-radius) * #{$pow1});
+  --border-radius--xl: calc(var(--border-radius) * #{$pow2});
+  --border-radius--xxl: calc(var(--border-radius) * #{$pow3});
+
+  --border-radius--pill: calc(var(--unit-size) * 1000);
+
+  --gap--xxs: calc(var(--gap) / #{$pow3});
+  --gap--xs: calc(var(--gap) / #{$pow2});
+  --gap--s: calc(var(--gap) / #{$pow1});
+  --gap: calc(var(--unit-size) * 1);
+  --gap--l: calc(var(--gap) * #{$pow1});
+  --gap--xl: calc(var(--gap) * #{$pow2});
+  --gap--xxl: calc(var(--gap) * #{$pow3});
+  --gap--xxxl: calc(var(--gap) * #{$pow4});
+
+  --font-size--xs: calc(var(--font-size) / #{$pow2});
+  --font-size--s: calc(var(--font-size) / #{$pow1});
+  --font-size: calc(var(--unit-size) * 1);
+  --font-size--l: calc(var(--font-size) * #{$pow1});
+  --font-size--xl: calc(var(--font-size) * #{$pow2});
+  --font-size--xxl: calc(var(--font-size) * #{$pow3});
+  --font-size--xxxl: calc(var(--font-size) * #{$pow4});
+  --font-size--xxxxl: calc(var(--font-size) * #{$pow5});
+
+
+  --underline-offset: 0.4em;
+  --text-decoration-thickness: 0.03em;
+}

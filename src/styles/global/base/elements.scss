@@ -1,0 +1,37 @@
+.button {
+  color: var(--text-color);
+  background: var(--clr-gray-5);
+  padding: var(--padding--xxxs) var(--padding--xxs);
+  border-radius: var(--border-radius--xs);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap--xs);
+}
+
+a.button {
+  text-decoration: none;
+  text-underline-offset: none;
+  text-decoration-thickness: none;
+}
+
+.download-button {
+  border-radius: var(--border-radius);
+  background-color: #21aa74;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: var(--padding--s);
+  width: 100%;
+  font-size: var(--font-size--l);
+  line-height: 1;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  gap: var(--gap--s);
+}

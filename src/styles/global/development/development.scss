@@ -1,0 +1,47 @@
+.development-mode {
+
+    .outline-red,
+    .outline--red {
+        outline: 2px solid red;
+    }
+
+    .border-red,
+    .border--red {
+        outline: 2px solid red;
+    }
+
+    [class^='debug'],
+    [class*=' debug'] {
+        position: relative;
+        --debug-name: var(--debug, "debug box");
+        // outline: 2px solid rgba(251, 192, 255, 0.471);
+
+        &::before {
+            border: 2px solid rgba(251, 192, 255, 0.471);
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(50, 205, 50, 0.05);
+            z-index: -1;
+        }
+
+        &::after {
+            content: "@ " attr(class);
+            font-size: calc(var(--font-size--xs) * 0.9);
+            line-height: 1;
+            // max-width: 8rem;
+            position: absolute;
+            top: calc(var(--padding--xs) * 0.7);
+            left: calc(var(--padding--xs) * 0.7);
+            padding: calc(var(--padding--xs) * 0.15) calc(var(--padding--xs) * 0.4);
+            padding-bottom: calc(var(--padding--xs) * 0.05);
+
+            background-color: rgba(37, 37, 37, 0.707);
+            // border-radius: 100px;
+            color: rgb(255, 207, 50);
+        }
+    }
+}

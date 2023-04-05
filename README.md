@@ -1,4 +1,6 @@
-# Astro Starter Kit: Blog
+# Recreating 10000rooz with Astro
+
+## Astro Starter Kit: Blog
 
 ```
 npm create astro@latest -- --template blog

@@ -1,0 +1,267 @@
+@use "create-color";
+
+:root {
+  /* ☀️🌘 HANDLING DARK AND LIGHT */
+  --ON: initial;
+  --OFF: ;
+}
+
+.light-theme {
+  --light: var(--ON);
+  --dark: var(--OFF);
+}
+
+.dark-theme {
+  --light: var(--OFF);
+  --dark: var(--ON);
+}
+
+/*  ⚪⚫ NEUTRAL COLORS ============================================================================================================ */
+@include create-color.lch($name: "--clr-gray",
+  $l: 50,
+  $c: 0,
+  $h: 0,
+  // $dark-l: 21,
+  // $dark-c: 22,
+  // $dark-h: 12,
+  $has-shades: true);
+
+/*  🔵🟢🟡🔴 FUNCTIONAL COLORS ============================================================================================================ */
+
+.light-theme {
+  --clr-info: hsl(210, 100%, 44%);
+  --clr-success: oklch(59% 62 150);
+  --clr-warning: hsl(29, 85%, 56%);
+  --clr-error: hsl(347, 71%, 53%);
+  --clr-danger: hsl(347, 71%, 53%);
+}
+
+.dark-theme {
+  --clr-info: hsl(210, 100%, 44%);
+  --clr-success: oklch(59% 62 150);
+  --clr-warning: hsl(29, 85%, 56%);
+  --clr-error: hsl(347, 71%, 53%);
+  --clr-danger: hsl(347, 71%, 53%);
+}
+
+.light-theme {
+  --clr-success-s: hsl(152, 100%, 93%);
+  --clr-info-s: hsl(209, 85%, 87%);
+  --clr-warning-s: hsl(44, 87%, 85%);
+  --clr-error-s: hsl(347, 92%, 85%);
+  --clr-danger-s: hsl(347, 92%, 85%);
+}
+
+.dark-theme {
+  --clr-success-s: hsl(152, 100%, 93%);
+  --clr-info-s: hsl(209, 85%, 87%);
+  --clr-warning-s: hsl(44, 87%, 85%);
+  --clr-error-s: hsl(347, 92%, 85%);
+  --clr-danger-s: hsl(347, 92%, 85%);
+}
+
+/* 🎨🎨🎨 BRAND COLORS  ========================================================================================================= */
+/* 🎨1️⃣ PRIMARY COLORS  ========================================================================================================= */
+
+.light-theme {
+  --clr-primary: #00aeee;
+  --clr-primary-h: 267;
+  --clr-primary-s: 70%;
+  --clr-primary-l: 50%;
+
+  --clr-primary-s: hsl(268, 78%, 93%);
+  --clr-primary-s-h: 268;
+  --clr-primary-s-s: 78%;
+  --clr-primary-s-l: 93%;
+}
+
+.dark-theme {
+  --clr-primary: #2fd2ff;
+  --clr-primary-h: 267;
+  --clr-primary-s: 88%;
+  --clr-primary-l: 58%;
+
+  --clr-primary-s: hsl(267, 100%, 86%);
+  --clr-primary-s-h: 267;
+  --clr-primary-s-s: 100%;
+  --clr-primary-s-l: 86%;
+}
+
+.light-theme {
+  --clr-primary-0: oklch(100% 106 311);
+  --clr-primary-1: oklch(90% 106 311);
+  --clr-primary-2: oklch(80% 106 311);
+  --clr-primary-3: oklch(70% 106 311);
+  --clr-primary-4: oklch(60% 106 311);
+  --clr-primary-5: oklch(50% 106 311);
+  --clr-primary-6: oklch(40% 106 311);
+  --clr-primary-7: oklch(30% 106 311);
+  --clr-primary-8: oklch(20% 106 311);
+  --clr-primary-9: oklch(10% 106 311);
+  --clr-primary-10: oklch(0% 106 311);
+}
+
+.dark-theme {
+  --clr-primary-0: oklch(0% 101 311);
+  --clr-primary-1: oklch(10% 101 311);
+  --clr-primary-2: oklch(20% 101 311);
+  --clr-primary-3: oklch(30% 101 311);
+  --clr-primary-4: oklch(40% 101 311);
+  --clr-primary-5: oklch(50% 101 311);
+  --clr-primary-6: oklch(60% 101 311);
+  --clr-primary-7: oklch(70% 101 311);
+  --clr-primary-8: oklch(80% 101 311);
+  --clr-primary-9: oklch(90% 101 311);
+  --clr-primary-10: oklch(100% 101 311);
+}
+
+/* 🎨2️⃣ SECONDARY COLORS  ========================================================================================================= */
+
+.light-theme {
+  --clr-secondary: hsl(175, 100%, 43%);
+  --clr-secondary: #00307A;
+
+  --clr-secondary-h: 175;
+  --clr-secondary-s: 100%;
+  --clr-secondary-l: 43%;
+
+  --clr-secondary-s: hsl(176, 55%, 88%);
+  --clr-secondary-s-h: 176;
+  --clr-secondary-s-s: 55%;
+  --clr-secondary-s-l: 88%;
+}
+
+.dark-theme {
+  --clr-secondary: hsl(175, 100%, 38%);
+  --clr-secondary: #204e93;
+  --clr-secondary-h: 175;
+  --clr-secondary-s: 100%;
+  --clr-secondary-l: 43%;
+
+  --clr-secondary-s: hsl(176, 71%, 86%);
+  --clr-secondary-s-h: 176;
+  --clr-secondary-s-s: 71%;
+  --clr-secondary-s-l: 86%;
+}
+
+.light-theme {
+  --clr-secondary-0: oklch(100% 48 184);
+  --clr-secondary-1: oklch(90% 48 184);
+  --clr-secondary-2: oklch(80% 48 184);
+  --clr-secondary-3: oklch(70% 48 184);
+  --clr-secondary-4: oklch(60% 48 184);
+  --clr-secondary-5: oklch(50% 48 184);
+  --clr-secondary-6: oklch(40% 48 184);
+  --clr-secondary-7: oklch(30% 48 184);
+  --clr-secondary-8: oklch(20% 48 184);
+  --clr-secondary-9: oklch(10% 48 184);
+  --clr-secondary-10: oklch(0% 48 184);
+}
+
+.dark-theme {
+  --clr-secondary-0: oklch(0% 48 184);
+  --clr-secondary-1: oklch(10% 48 184);
+  --clr-secondary-2: oklch(20% 48 184);
+  --clr-secondary-3: oklch(30% 48 184);
+  --clr-secondary-4: oklch(40% 48 184);
+  --clr-secondary-5: oklch(50% 48 184);
+  --clr-secondary-6: oklch(60% 48 184);
+  --clr-secondary-7: oklch(70% 48 184);
+  --clr-secondary-8: oklch(80% 48 184);
+  --clr-secondary-9: oklch(90% 48 184);
+  --clr-secondary-10: oklch(100% 48 184);
+}
+
+/* 🎨3️⃣ SECONDARY COLORS  ========================================================================================================= */
+
+.light-theme {
+  --clr-tertiary: oklch(50% 49 266);
+  --clr-tertiary-h: 206;
+  --clr-tertiary-s: 90%;
+  --clr-tertiary-l: 60%;
+
+  --clr-tertiary-s: hsl(210, 95%, 93%);
+  --clr-tertiary-s-h: 210;
+  --clr-tertiary-s-s: 95%;
+  --clr-tertiary-s-l: 93%;
+}
+
+.dark-theme {
+  --clr-tertiary: hsl(206, 91%, 60%);
+  --clr-tertiary-h: 206;
+  --clr-tertiary-s: 90%;
+  --clr-tertiary-l: 60%;
+
+  --clr-tertiary-s: hsl(210, 100%, 87%);
+  --clr-tertiary-s-h: 210;
+  --clr-tertiary-s-s: 100%;
+  --clr-tertiary-s-l: 87%;
+}
+
+.light-theme {
+  --clr-tertiary-0: oklch(100% 49 266);
+  --clr-tertiary-1: oklch(90% 49 266);
+  --clr-tertiary-2: oklch(80% 49 266);
+  --clr-tertiary-3: oklch(70% 49 266);
+  --clr-tertiary-4: oklch(60% 49 266);
+  --clr-tertiary-5: oklch(50% 49 266);
+  --clr-tertiary-6: oklch(40% 49 266);
+  --clr-tertiary-7: oklch(30% 49 266);
+  --clr-tertiary-8: oklch(20% 49 266);
+  --clr-tertiary-9: oklch(10% 49 266);
+  --clr-tertiary-10: oklch(0% 49 266);
+}
+
+.dark-theme {
+  --clr-tertiary-0: oklch(0% 49 266);
+  --clr-tertiary-1: oklch(10% 49 266);
+  --clr-tertiary-2: oklch(20% 49 266);
+  --clr-tertiary-3: oklch(30% 49 266);
+  --clr-tertiary-4: oklch(40% 49 266);
+  --clr-tertiary-5: oklch(50% 49 266);
+  --clr-tertiary-6: oklch(60% 49 266);
+  --clr-tertiary-7: oklch(70% 49 266);
+  --clr-tertiary-8: oklch(80% 49 266);
+  --clr-tertiary-9: oklch(90% 49 266);
+  --clr-tertiary-10: oklch(100% 49 266);
+}
+
+
+.light-theme {
+  --background-color: hsl(0, 0%, 100%);
+  --background-color-s: rgb(207, 207, 207);
+  --background-color-xs: rgb(235, 235, 235);
+}
+
+.dark-theme {
+  --background-color: #2e2e2e;
+  --background-color-s: #474747;
+  --background-color-xs: #3b3b3b;
+}
+
+.light-theme {
+  --text-color: hsl(213, 10%, 22%);
+  --text-color-inverse: #fff;
+  --text-color-s: rgb(87, 87, 87);
+  --text-color-xs: hsl(0, 0%, 50%);
+  --text-color-xxs: hsl(0, 0%, 70%);
+}
+
+.dark-theme {
+  --text-color: rgb(224, 224, 224);
+  --text-color-inverse: #000;
+  --text-color-s: rgb(175, 175, 175);
+  --text-color-xs: hsl(0, 0%, 50%);
+  --text-color-xxs: hsl(0, 0%, 30%);
+}
+
+.light-theme {
+  --hover-color: hsl(283, 100%, 50%);
+  --hover-color-light: hsl(283, 100%, 83%);
+}
+
+.dark-theme {
+  --hover-color: hsl(283, 100%, 77%);
+  --hover-color-light: hsl(283, 100%, 64%);
+}
+

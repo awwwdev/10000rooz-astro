@@ -1,0 +1,24 @@
+@use "radix-color";
+
+/* 🎨🎨🎨 CATEGORY COLORS  */
+
+@include radix-color.create($scope: ".major-cat-clr", $name: "--clr-primary", $radix-pigment: "grass");
+
+@include radix-color.create($scope: ".major-cat-clr", $name: "--clr-secondary", $radix-pigment: "orange");
+
+// ==================
+@include radix-color.create($scope: ".career-cat-clr", $name: "--clr-primary", $radix-pigment: "plum");
+
+@include radix-color.create($scope: ".career-cat-clr", $name: "--clr-secondary", $radix-pigment: "cyan");
+
+// ==================
+
+@include radix-color.create($scope: ".job-search--cat-clr", $name: "--clr-primary", $radix-pigment: "teal");
+
+@include radix-color.create($scope: ".job-search-cat-clr", $name: "--clr-secondary", $radix-pigment: "brown");
+
+// ==================
+
+@include radix-color.create($scope: ".workplace-cat-clr", $name: "--clr-primary", $radix-pigment: "violet");
+
+@include radix-color.create($scope: ".workplace-cat-clr", $name: "--clr-secondary", $radix-pigment: "grass");

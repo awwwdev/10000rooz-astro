@@ -1,0 +1,14 @@
+:root {
+  --font-family--heading-normal-num: 'Yekan Bakh', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Arial, sans-serif, 'Ubuntu', 'Cantarell', 'Fira Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-family--content-normal-num: 'Yekan Bakh', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Arial, sans-serif, 'Ubuntu', 'Cantarell', 'Fira Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-family--article-normal-num: 'IRANSans', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Arial, sans-serif, 'Ubuntu', 'Cantarell', 'Fira Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  --font-family--heading-fa-num: 'Yekan Bakh FaNum', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Arial, sans-serif, 'Ubuntu', 'Cantarell', 'Fira Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-family--content-fa-num: 'Yekan Bakh FaNum', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Arial, sans-serif, 'Ubuntu', 'Cantarell', 'Fira Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-family--article-fa-num: 'IRANSans', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Arial, sans-serif, 'Ubuntu', 'Cantarell', 'Fira Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+
+  --font-family--heading: var(--font-family--heading-normal-num);
+  --font-family--content: var(--font-family--content-normal-num);
+  --font-family--article: var(--font-family--article-normal-num);
+}

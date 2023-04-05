@@ -1,0 +1,72 @@
+:root {
+
+
+  
+
+  
+
+
+    --input-background: var(--gray-3);
+    --input-background: var(--gray-3);
+    --input-background-disabled: var(--gray-6) --input-background-focus: var(--focus-clr);
+    --placeholder-text-color: var(--gray-4);
+
+    --card-background-color: var(--clr-gray-2);
+    --nav-background-color: var(--gray-2);
+
+    --modal-background: var(--gray-3);
+    --footer-background-color: var(--clr-secondary-3);
+     --scroll-thumb-color: var(--gray-10);
+    --scroll-background-color: var(--gray-8);
+}
+
+// charts colors 
+
+.major-cat-clr {
+    --clr-chart-good: var(--clr-primary-9);
+    --clr-chart-good-text: var(--clr-primary-11);
+    --clr-chart-neutral: var(--clr-gray-8);
+    --clr-chart-bad: var(--clr-secondary-9);
+    --clr-chart-axis: var(--clr-gray-7);
+    --clr-chart-axis-text: var(--clr-gray-10);
+}
+
+
+
+:root {
+    .recharts-bar-rectangle:nth-of-type(1) {
+        --clr-chart-custom-a: pink;
+    }
+
+    .recharts-bar-rectangle:nth-of-type(2) {
+        --clr-chart-custom-a: rgb(207, 194, 76);
+    }
+
+    .recharts-bar-rectangle:nth-of-type(3) {
+        --clr-chart-custom-a: green;
+    }
+
+    .recharts-bar-rectangle:nth-of-type(4) {
+        --clr-chart-custom-a: rgb(105, 0, 128);
+    }
+}
+
+:root {
+    .chart-with-color-pallet {
+        .recharts-bar-rectangle:nth-of-type(2n) {
+            --clr-primary: #45ffec;
+            --clr-chart-c: #418462;
+            --clr-secondary: #4c7563;
+        }
+    }
+}
+
+.dark-theme {
+    .chart-with-color-pallet {
+        .recharts-bar-rectangle:nth-of-type(2n) {
+            --clr-primary: #45ffd4;
+            --clr-chart-c: #56807a;
+            --clr-secondary: #518171;
+        }
+    }
+}

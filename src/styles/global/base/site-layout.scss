@@ -1,0 +1,31 @@
+html {
+  direction: rtl;
+  /* scroll-behavior: smooth; */
+}
+
+html,
+body {
+  max-width: 100vw;
+  direction: rtl;
+  height: 100%;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+#__next {
+  isolation: isolate;
+  max-width: 100vw;
+  /* height: 100%; cause the sticky navbar hides after a certain point. */
+  height: auto; 
+  /* since height:100% can not be used, min-heigh: 100vh is used to achieve almost the same thing.. */
+  min-height: 100vh;
+  /* set to 120vh to avoid layout shift because of appreance of scrollbard when going from one page to onther and also avoid footer flash when website is loading */
+  display: grid;
+  grid-template-areas:
+    'navbar'
+    'main'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+}

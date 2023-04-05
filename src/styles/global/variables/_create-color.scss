@@ -1,0 +1,86 @@
+@use "sass:string";
+
+@function calc-light($l, $theme) {
+
+  @if $theme ==string.unquote(".light-theme") {
+    @return $l;
+  }
+
+  @else {
+    @return ((100 - $l) * 0.9);
+  }
+}
+
+
+@function printoklch($l, $c, $h) {
+  @return oklch(percentage($l / 100) $c $h );
+}
+
+@mixin lch($scope: false, $name, $l, $c, $h, $dark-l: null, $dark-c: null, $dark-h: null, $has-shades: false) {
+
+  
+
+    @if $theme ==string.unquote(".dark-theme") {
+      @if $dark-l {
+        $l: $dark-l;
+      }
+
+      @if $dark-c {
+        $c: $dark-c;
+      }
+
+      @if $dark-h {
+        $h: $dark-h;
+      }
+    }
+
+    $root: string.unquote(":root");
+    $selector: #{$root}#{$theme}, #{$theme};
+
+    @if $scope {
+      $scope: string.unquote($scope);
+      $selector: #{$theme}#{$scope},
+      #{$theme} #{$scope},
+      #{$scope} #{$theme};
+    }
+
+    #{$selector} {
+
+      #{$name}: #{printoklch($l, $c, $h)};
+      #{$name}-s: #{printoklch(calc-light(70, $theme), $c, $h)};
+
+      @if $has-shades {
+        /* #{$name} shades in #{$theme} */
+
+        @for $i from 0 through 10 {
+          @if $i ==0 {
+            #{$name}-0: #{printoklch(calc-light(100, $theme), $c, $h)};
+          }
+
+          @elseif $i ==1 {
+            #{$name}-05: #{printoklch(calc-light(95, $theme), $c, $h)};
+          }
+
+          @else {
+            #{$name}-#{$i * 1}: #{printoklch(calc-light(100 - ($i * 10), $theme), $c, $h)};
+            #{$name}-#{$i * 10 + 5} : #{printoklch(calc-light(100 - ($i * 10 + 5), $theme), $c, $h)};
+          }
+        }
+
+        // end of @for
+        #{$name}-10 : #{printoklch(calc-light(100, $theme), $c, $h)};
+      }
+    }
+
+    //end of @if
+  }
+
+  //end of @for
+}
+
+//end of @mixin
+
+//example
+// @include lch-color($name: test, $l: 0, $c: 20, $h: 60 , $width-shades: true);
+// @include lch-color($scope: ".cat-major", $name: "--clr-primary", $l: 50, $c: 0, $h: 0, $has-shades: false);
+// @include lch-color($name: "--clr-primary", $l: 50, $c: 0, $h: 0, $has-shades: false);

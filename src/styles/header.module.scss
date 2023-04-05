@@ -1,0 +1,149 @@
+.header {
+  z-index: 100; // TO SOLVE Img APPEARING ABOVE NAVBAR.
+  position: sticky;
+  top: 0;
+  /* background-color: var(--clr-primary); */
+  padding: 0 var(--padding--xs);
+  display: flex;
+  align-items: center;
+  /* color: var(--header-text-color); */
+  background-color: var(--light, var(--clr-gray-1)) var(--dark, var(--clr-gray-3));
+
+  /* @supports (backdrop-filter: blur(0.5rem)) {
+  background-color: var(--light , rgba(255, 255, 255, 0.8)) var(--dark , hsl(0 0% 18% / 0.8));
+  backdrop-filter: blur(0.5rem);
+} */
+
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.headerNotOnTop {
+  box-shadow: var(--box-shadow--s);
+}
+
+.hamburgerMenuButton {
+  display: none;
+
+  @media screen and (max-width: 51rem) {
+    display: block;
+    outline: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: "absolute";
+      display: block;
+      width: 1.2rem;
+      height: 0.2rem;
+      background-color: var(--text-color);
+      margin-block: 0.3rem;
+      border-radius: 0.12rem;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+
+.hamburgerMenuButtonOpen {
+  &::before {
+    @media screen and (max-width: 51rem) {
+      transform: translateY(0.3rem) rotate(225deg);
+    }
+  }
+
+  &::after {
+    @media screen and (max-width: 51rem) {
+      transform: translateY(-0.2rem) rotate(-225deg);
+    }
+  }
+
+}
+
+
+.wrapper {
+  width: 100%;
+  /* position: relative; */
+  display: grid;
+  column-gap: var(--gap);
+  grid-template-columns: 1fr auto 1fr;
+}
+
+
+.nav {
+
+  @media screen and (min-width: 51rem) {
+    /* flex: 1; */
+    display: flex;
+    gap: var(--gap--l);
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: 700;
+
+    a:hover {
+      color: var(--clr-primary);
+      color: #21aa74; // to match major report banner
+
+    }
+  }
+
+  @media screen and (max-width: 50.99rem) {
+    font-size: var(--font-size--xxl);
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gap--xxxl);
+    position: absolute;
+    z-index: 9;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
+    /* bottom: 20rem; */
+    height: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    @supports (backdrop-filter: blur(1rem)) {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(1rem);
+
+      /* prefere-contrast more removes blur effect. so we need a darker back otherwise we get even less contrast! */
+      @media (prefers-contrast: more) {
+        background-color: rgba(0, 0, 0, 0.85);
+      }
+    }
+
+    a {
+      color: white;
+    }
+
+    a:hover {
+      color: var(--clr-primary);
+      color: #21aa74; // to match major report banner
+
+    }
+
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.navOpen {
+  height: calc(100vh - 100%);
+}
+
+.logoWrapper {
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &:hover {
+    color: var(--clr-primary);
+    color: #21aa74; // to match major report banner
+  }
+}

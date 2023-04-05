@@ -1,0 +1,23 @@
+@use "sass:string";
+
+
+@mixin create($scope: string.unquote(":root"), $name, $radix-pigment) {
+
+  #{$scope} {
+
+    #{$name}: var(--#{$radix-pigment}-11);
+    #{$name}-s: var(--#{$radix-pigment}-10);
+    
+    
+    @for $i from 1 through 12 {
+      #{$name}-#{$i}: var(--#{$radix-pigment}-#{$i});
+    }
+    
+    @for $i from 1 through 12 {
+      #{$name}-a-#{$i}: var(--#{$radix-pigment}-a-#{$i});
+    }
+  }
+}
+
+// example
+// @include create($name: "--primary" , $radix-pigment: green);
