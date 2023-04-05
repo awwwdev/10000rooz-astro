@@ -1,0 +1,31 @@
+---
+import LogoSvg from '@/public/logos/10000rooz-logo-2.svg';
+
+---
+    <span class="logoImage">
+      <LogoSvg class="logoSvg" />
+    </span>
+<style>
+  .logoImage {
+  height: max-content;
+  width: max-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction:column; */
+  gap: var(--gap);
+}
+
+.logoSvg {
+  width: 7.8rem;
+
+  @media screen and (max-width: 50rem) {
+    width: 6rem;
+  }
+
+  @media screen and (max-width: 20rem) {
+    width: 5rem;
+  }
+}
+</style>

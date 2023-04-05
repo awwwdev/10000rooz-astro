@@ -1,0 +1,21 @@
+---
+
+
+
+interface Props  {
+  class?: string;
+  // activeClassName?: string;
+  href: string | undefined;
+  // isFullWidth?: boolean;
+  [key: string]: any;
+}
+
+
+const props = Astro.props;
+const isCurrentPath = Astro.url.pathname === props.href;
+---
+
+      <a href={props.href} class={ isCurrentPath ? `${props.class} active-nav-link` : props.class} >
+        <slot />
+    </a>
+

@@ -3,7 +3,25 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+	  <footer class=" cls-white padding--xl" style={{ backgroundColor: '#383838' }}>
+      <div class="flex a-center column gap--xxl">
+        <a href="/">
+          <Logo />
+        </a>
+        <ul class="layout:row-stack j-center gap--xl width--100 max-width:article clr:s">
+          <a href="/about">دربارهٔ ما</a>
+          <a href="/contact">تماس با ما</a>
+          <a href="/work-with-us">همکاری با ما</a>
+          <a href="/support-us">حمایت از ما</a>
+          {/* <li>
+            <Link href="/sponcers">حامیان و همراهان</Link>
+          </li> */}
+        </ul>
+        <div class="flex a-center column clr:s">
+					&copy; {today.getFullYear()} 10000rooz. All rights reserved.
+        </div>
+      </div>
+    </footer>
 </footer>
 <style>
 	footer {
