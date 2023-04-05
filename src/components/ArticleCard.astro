@@ -1,0 +1,22 @@
+---
+
+const {
+  slug = '', excerpt = '', title,  link = null, tags = null, features = null, categories = null, ...rest
+} = Astro.props;
+---
+    <a href={link || `/posts/${slug}`} class="card padding flex column gap">
+      <h3 class="card-title  font-size--xl">{title}</h3>
+      <p class='excerpt'>{excerpt}</p>
+    </a>
+
+<style lang='scss'>
+  .excerpt {
+  display: -webkit-box;
+  /* max-width: 200px; */
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+</style>
+

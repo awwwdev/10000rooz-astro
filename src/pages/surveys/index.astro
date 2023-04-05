@@ -1,0 +1,27 @@
+---
+import ArticleCard from '@components/ArticleCard.astro';
+import GlobalLayout from 'src/layouts/GlobalLayout.astro';
+// import { NextSeo } from 'next-seo';
+---
+<GlobalLayout
+        title="نظرسنجی‌ها"
+        description="همهٔ نظرسنجی‌های ۱۰۰۰۰روز"
+        canonical="https://10000rooz.com/surveys/"
+      >
+      <div class="layout:stack padding-block--xl max-width--page">
+        <h1>نظرسنجی‌‌ها </h1>
+        <div class="card-grid gap--l">
+          <ArticleCard
+            slug="major"
+            link="/surveys/major"
+            title="گزارش نظرسنجی انتخاب رشته"
+            excerpt="انتخاب رشته یکی از مهم‌ترین مراحل زندگی ما به حساب می‌آید و بسیار مهم است که با اطلاعات کافی به سراغ آن برویم. این گزارش، ماحصل تجربیات ۲۲۶۹ نفر پاسخ‌دهنده است و مطالعهٔ آن می‌تواند دید بسیار خوبی نسبت به موضوع انتخاب رشته بدهد."
+          />
+          {/* hide the old survey to avoid confusion for a while */}
+          {/* <ArticleCardWP
+            blogData={oldSurveyPostData}
+          /> */}
+        </div>
+      </div>
+
+      </GlobalLayout>

@@ -1,0 +1,97 @@
+---
+import { ReceiveSquare } from 'iconsax-react';
+import { Icon } from '@/components/uikit';
+import styles from '@/styles/major-report.module.scss';
+import MajorArticleTimeline from '@/components/MajorArticlesTimeline';
+import MajorAdvices from '../../components/MajorAdvices';
+import ReportWebVersion from '../../components/ReportWebVersion';
+import GlobalLayout from 'src/layouts/GlobalLayout.astro';
+const latestVersion = '1.1';
+
+---
+
+      <GlobalLayout
+        title="گزارش نظرسنجی انتخاب رشته"
+        description="نظرسنجی انتخاب رشته، نگاهی داده‌محور به مسئلهٔ انتخاب رشته"
+        canonical="https://10000rooz.com/surveys/major/"
+      >
+      <div class="layout-stack major-cat-clr">
+        <article class="layout-stack" style="padding-bottom: var(--padding--xl);">
+          <section class={`${styles.banner} dark-theme`}>
+            <div class="max-width--article flex column gap--s a-center">
+              <h1 class="font-size--xxl">گزارش نظرسنجی انتخاب رشته</h1>
+              <p class="font-size--xl font-weight--800 clr-white">
+                نگاهی داده‌محور به مسئلهٔ انتخاب رشته
+              </p>
+              <p>
+                انتخاب رشته یکی از مهم‌ترین مراحل زندگی ما به حساب می‌آید و بسیار مهم است که با اطلاعات کافی به سراغ آن
+                برویم. این گزارش، ماحصل
+                تجربیات ۲۲۶۹ نفر پاسخ‌دهنده است و مطالعهٔ آن می‌تواند دید بسیار خوبی نسبت به موضوع انتخاب رشته بدهد.
+              </p>
+              <div class="flex j-center">
+                <a
+                  class={`${styles.downloadButton} margin-top--xl`}
+                  href="/reports/10000rooz-major-report.pdf"
+                  download="10000rooz-major-report.pdf"
+                >
+                  <Icon icon={ReceiveSquare} alt="" />
+                  دانلود رایگان گزارش
+                </a>
+              </div>
+              <p class="fa-num">
+                نسخهٔ
+                {' '}
+                {latestVersion}
+              </p>
+            </div>
+          </section>
+          <section aria-label="دربارهٔ گزاراش" class="max-width--article padding-block--l layout-stack">
+            <p>
+              وقتی به مسیر شغلی افراد مختلف نگاه می‌کنیم، متوجه می‌شویم که فارغ از هرچیزی، آغاز این مسیر، همواره به
+              ایستگاهی به نام انتخاب رشته
+              بازمی‌گردد؛ ایستگاهی که تأثیر آن را می‌توان در جای‌جایِ زندگی مشاهده کرد. نگاه درست به این مرحله از زندگی
+              و درک چالش‌های آن، می‌تواند ما
+              را به‌سمت مسیری درست هدایت کند و از سختی‌های راه، بکاهد.
+            </p>
+            <p>
+              در این گزارش، به‌تفصیل از تجربهٔ زیستهٔ انتخاب رشتهٔ ۲۲۶۹ نفر سخن به میان آورده‌ایم.
+            </p>
+            <p>
+              مطالعهٔ این گزارش می‌تواند دید خوبی نسبت به انتخاب رشته بدهد و به بهبود این تجربه کمک کند.
+            </p>
+            <p class="">
+              اجرای این نظرسنجی با حمایت
+              <a href="https://banaacc.ir/"> شتاب‌دهندهٔ استعداد بانا </a>
+              ممکن شد.
+            </p>
+          </section>
+          <section aria-label="توصیه‌ها" class="max-width--page layout-stack">
+            <div class="max-width--article layout-stack">
+              <h2>قبل از انتخاب رشته، این توصیه‌ها را ببینید</h2>
+              <p>
+                در پایان نظرسنجی از پاسخ‌دهندگان پرسیدیم که به کسانی که می‌خواهند به رشتهٔ شما بیایند چه توصیه‌ای
+                می‌کنید. در جدول زیر ۱۵۰۰ توصیه برای
+                رشته‌های مختلف را می‌توانید ببیند.
+              </p>
+              <p>برای دیدن توصیه‌های یک رشته، نام رشته را جستجو کنید.</p>
+              <p>
+                توصیه‌های کلی پاک شده‌اند؛ توصیه‌هایی مانند «برو دنبال علاقه‌ات»، «به هرچی علاقه داشته باشی، توش موفق
+                می‌شی» و... .
+              </p>
+            </div>
+            <MajorAdvices />
+          </section>
+          <section aria-label="گزارش نظرسنجی، نسخهٔ وب" class="layout-stack">
+            <div class="max-width--page  wp-article">
+              <h2>گزارش نظرسنجی،‌نسخه وب</h2>
+            </div>
+            <ReportWebVersion />
+          </section>
+          <section>
+            <div class="max-width--page layout-stack-all  wp-article">
+              <MajorArticleTimeline />
+            </div>
+          </section>
+        </article>
+      </div>
+      </GlobalLayout>
