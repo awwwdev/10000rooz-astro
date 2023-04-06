@@ -1,0 +1,20 @@
+---
+const { onClick, className } = Astro.props;
+---
+
+    <button date-menu-toggle type="button" onClick={onClick} className={className}>
+      <span className="sr-only">منو وبسایت</span>
+    </button>
+
+
+    <script>
+import { toggleMenu } from 'src/scripts/menu';
+const hambergurButton = document.querySelectorAll('[data-menu-toggle]');
+
+hambergurButton?.forEach(btn => {
+  btn.addEventListener('click' , () => {
+    toggleMenu();
+  })
+});
+
+  </script>

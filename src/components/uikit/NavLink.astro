@@ -1,7 +1,6 @@
 ---
 
 
-
 interface Props  {
   class?: string;
   // activeClassName?: string;
@@ -15,7 +14,18 @@ const props = Astro.props;
 const isCurrentPath = Astro.url.pathname === props.href;
 ---
 
-      <a href={props.href} class={ isCurrentPath ? `${props.class} active-nav-link` : props.class} >
+      <a date-nav-link href={props.href} class={ isCurrentPath ? `${props.class} active-nav-link` : props.class} >
         <slot />
     </a>
 
+<script>
+import {closeMenu} from '../../scripts/menu';
+const navLink = document.querySelectorAll('[data-nav-link]');
+
+navLink?.forEach(navLink => {
+  navLink.addEventListener('click' , () => {
+    closeMenu();
+  })
+});
+
+  </script>
