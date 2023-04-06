@@ -29,7 +29,7 @@ const ListItem = ({ link, children }) => {
   return (
     // <li className={`${styles.item}
     //  ${router.asPath === link && styles.currentPage}`}>
-    <li className={`${styles.item}`}>
+    <li className={`timeline-item`}>
       <a href={link}>{children}</a>
     </li>
   );
