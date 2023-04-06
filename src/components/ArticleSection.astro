@@ -1,18 +1,24 @@
 ---
 import ArticleCard from './ArticleCard.astro';
 
+export interface Props {
+  title?: string;
+  slugs: string[];
+  [key: string]: any;
+}
+
 const {
   title, slugs, getBlogDataBySlug, ...rest 
 } = Astro.props; 
-  console.log("🚀 ~ slugs:", slugs)
 
 ---
     <section aria-label={title} class={`section ${rest.class}`}>
       <div class="column max-width--page layout-stack">
         <h2>{title}</h2>
         <div class="card-grid gap--l">
-          {slugs.map((slug) => {
+          {slugs.map((slug: string) => {
             const p = getBlogDataBySlug(slug);
+            console.log("🚀 ~ p:", p)
             return (
               <ArticleCard
                 title={p.title}

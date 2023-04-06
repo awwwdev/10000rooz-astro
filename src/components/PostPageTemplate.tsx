@@ -12,13 +12,13 @@ const PostPage = ({ post }) => {
       />
       <div className="rtl max-width--article padding--page layout-stack-all">
         <h1>{post.title}</h1>
-        <p className="fa-num">
+        {/* <p className="fa-num">
           زمان خواندن:
           {' '}
           {Math.floor(post.readingTime.minutes)}
           {' '}
           دقیقه
-        </p>
+        </p> */}
         <p>
           دسته‌بندی:
           {' '}

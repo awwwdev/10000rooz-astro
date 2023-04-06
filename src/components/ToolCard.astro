@@ -2,11 +2,11 @@
 const {
   name = '', description = '', pageLink = null, downloadLink = '', downloadFileName, 
 } = Astro.props ;
-import { ReceiveSquare } from 'iconsax-react';
+// import { ReceiveSquare } from 'iconsax-react';
 
 ---
     <div class="card padding border-radius flex column gap ">
-      <div style={{ marginBottom: 'auto' }}>
+      <div style="margin-bottom: auto;">
         <h3 class="card-title font-size--xl">{name}</h3>
         <p class="margin-top--xs">{description}</p>
         <slot />
