@@ -2,7 +2,7 @@
 
 @function calc-light($l, $theme) {
 
-  @if $theme ==string.unquote(".light-theme") {
+  @if $theme ==string.unquote(".light") {
     @return $l;
   }
 
@@ -20,7 +20,7 @@
 
   
 
-    @if $theme ==string.unquote(".dark-theme") {
+    @if $theme ==string.unquote(".dark") {
       @if $dark-l {
         $l: $dark-l;
       }

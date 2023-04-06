@@ -1,4 +1,4 @@
-@use "radix-color";
+@use 'radix-color';
 
 :root {
   /* ☀️🌘 HANDLING DARK AND LIGHT */
@@ -6,33 +6,30 @@
   --OFF: ;
 }
 
-.light-theme {
+.light {
   --light: var(--ON);
   --dark: var(--OFF);
 }
 
-.dark-theme {
+.dark {
   --light: var(--OFF);
   --dark: var(--ON);
 }
 
 /*  ⚪⚫ NEUTRAL COLORS ============================== */
 
-
-
-@include radix-color.create($name: "--clr-gray", $radix-pigment: "gray");
-
+@include radix-color.create($name: '--clr-gray', $radix-pigment: 'gray');
 
 /*  🔵🟢🟡🔴 FUNCTIONAL COLORS (INFO, SUCCESS, WARNING, ERROR) ================== */
 
-@include radix-color.create($name: "--clr-info", $radix-pigment: "blue");
-@include radix-color.create($name: "--clr-success", $radix-pigment: "grass");
-@include radix-color.create($name: "--clr-warning", $radix-pigment: "yellow");
-@include radix-color.create($name: "--clr-error", $radix-pigment: "red");
+@include radix-color.create($name: '--clr-info', $radix-pigment: 'blue');
+@include radix-color.create($name: '--clr-success', $radix-pigment: 'grass');
+@include radix-color.create($name: '--clr-warning', $radix-pigment: 'yellow');
+@include radix-color.create($name: '--clr-error', $radix-pigment: 'red');
 
 /* 🎨🎨🎨 BRAND COLORS  ======================================== */
-@include radix-color.create($name: "--clr-primary", $radix-pigment: "blue");
-@include radix-color.create($name: "--clr-secondary", $radix-pigment: "violet");
+@include radix-color.create($name: '--clr-primary', $radix-pigment: 'blue');
+@include radix-color.create($name: '--clr-secondary', $radix-pigment: 'violet');
 
 :root {
   --background-color: var(--gray-1);
