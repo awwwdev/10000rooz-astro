@@ -1,7 +1,7 @@
 ---
 
 const {
-  slug = '', excerpt = '', title,  link = null, tags = null, features = null, categories = null, ...rest
+  slug = '', excerpt = '', title,  link = null, tags = null, features = null, categories = null
 } = Astro.props;
 ---
     <a href={link || `/posts/${slug}`} class="card padding flex column gap">

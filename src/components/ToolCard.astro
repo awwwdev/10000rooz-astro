@@ -1,6 +1,6 @@
 ---
 const {
-  name = '', description = '', pageLink = null, downloadLink = '', downloadFileName, children = null,
+  name = '', description = '', pageLink = null, downloadLink = '', downloadFileName, 
 } = Astro.props ;
 import { ReceiveSquare } from 'iconsax-react';
 
@@ -9,7 +9,7 @@ import { ReceiveSquare } from 'iconsax-react';
       <div style={{ marginBottom: 'auto' }}>
         <h3 class="card-title font-size--xl">{name}</h3>
         <p class="margin-top--xs">{description}</p>
-        {children}
+        <slot />
       </div>
       <div class="flex a-center gap margin-top--xl">
         <a href={downloadLink} download={downloadFileName} class="button bg-primary clr-white">

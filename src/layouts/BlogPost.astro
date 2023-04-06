@@ -5,7 +5,7 @@ import GlobalLayout from './GlobalLayout.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, readingTime,  pubDate, updatedDate, heroImage , categories } = Astro.props;
+const { title, description, readingTime,  pubDate, heroImage , categories } = Astro.props;
 ---
 <GlobalLayout  title={title} description={description} >
 

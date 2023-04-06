@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo';
-import * as meta from '@/constants/appMetaData';
+import * as meta from '../../constants/appMetaData';
 
 const BlogHead = () => (
   <NextSeo

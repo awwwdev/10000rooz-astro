@@ -1,12 +1,9 @@
 ---
-const { onClick, className } = Astro.props;
+const props = Astro.props;
 ---
 
-    <button date-menu-toggle type="button" onClick={onClick} className={className}>
+    <button date-menu-toggle type="button" onClick={props.onClick} class={props.class}>
       <span class="sr-only">منو وبسایت</span>
-      <style>
-
-</style>
     </button>
 
 

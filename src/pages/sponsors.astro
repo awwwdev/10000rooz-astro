@@ -1,11 +1,12 @@
 ---
 import GlobalLayout from 'src/layouts/GlobalLayout.astro';
 
-const { default: ParkLogo } = await import(`/public/logos/shariftechpark-logo.svg?raw`);
-const { default: BanaLogo } = await import(`/public/logos/bana-logo.svg?raw`);
-const { default: DigargoonLogo } = await import(`/public/logos/digargoon-logo.svg?raw`);
-const { default: KarbonLogo } = await import(`/public/logos//karbon-logo.svg?raw`);
-const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.svg?raw`);
+// const { default: ParkLogo } = await import(`/public/logos/shariftechpark-logo.svg?raw`);
+// const { default: BanaLogo } = await import(`/public/logos/bana-logo.svg?raw`);
+// const { default: DigargoonLogo } = await import(`/public/logos/digargoon-logo.svg?raw`);
+// const { default: KarbonLogo } = await import(`/public/logos//karbon-logo.svg?raw`);
+// const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.svg?raw`);
+import Svg from "@jasikpark/astro-svg-loader";
 
 ---
       <GlobalLayout
@@ -20,11 +21,20 @@ const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.sv
             <h2>حامیان</h2>
             <h3>پارک علم‌وفناوری شریف</h3>
             <ParkLogo style="width: 20rem; height: 10rem;" />
+                      <Svg 
+                slot='logo'
+          src={import(`/public/logos/shriftechpark-logo.svg?raw`)}
+          style="width: 20rem; height: 10rem;"
+          />
             <p>پارک علم و فناوری دانشگاه صنعتی شریف در سال ۱۳۹۵ تأسیس شد. با شکل‌گیری پارک، فعالیت‌های مرتبط با کارآفرینی و شکل‌گیری شرکت‌های دانش‌بنیان در دانشگاه صنعتی شریف که به تدریج از سال 1379 توسعه یافته بودند، به صورت یکپارچه زیر نظر پارک قرار گرفت.</p>
             <p>این مجموعه به عنوان یک پارک دانشگاهی در نظر دارد تا با ایجاد یک تعامل برد-برد میان بدنۀ علمی دانشگاه و دیگر نهادها به یک الگوی ملی در زمینه‌ توسعه پایدار و ارزش‌آفرینی در سطح جامعه تبدیل شود.</p>
             <p>هویت بخشی به ناحیه نوآوری شریف در اطراف پردیس اصلی دانشگاه و کمک به رونق کسب‌وکارهای فناوران مستقر در این ناحیه یکی از برنامه های مهم پارک محسوب می‌شود.</p>
             <h3>شتاب‌دهندهٔ استعداد بانا</h3>
-            <BanaLogo  style="width: 20rem; height: 10rem;" />
+                <Svg 
+                slot='logo'
+          src={import(`/public/logos/bana-logo.svg?raw`)}
+          style="width: 20rem; height: 10rem;"
+          />
             <p>شتاب‌دهندهٔ استعداد بانا یک نظم آموزشی و مشاوره‌ای نوین برای فراگیری مهارت‌های کار تیمی و کمک به اشتغال جوانان است.</p>
             <p>تصمیم‌گیری‌های مهم در مسیر شغلی، آموزش و استخدام از اهداف اصلی شرکت دانش‌بنیان ما،  از آبان سال ۱۳۹۶ تاکنون بوده است.</p>
             <p>ما در بانا همیشه در حال فکرکردن به مفهوم کار و زندگی هستیم...</p>
@@ -42,19 +52,34 @@ const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.sv
           <section aria-label="همراهان " class="layout:stack gap--xxl">
             <h2>همراهان</h2>
             <h3>آژانس دیزاین دیگرگون</h3>
-            <DigargoonLogo  style="width: 20rem; height: 10rem;" />
+                    <Svg 
+                slot='logo'
+          src={import(`/public/logos/digargoon-logo.svg?raw`)}
+         style="width: 20rem; height: 10rem;"
+          />
+            <!-- <DigargoonLogo  style="width: 20rem; height: 10rem;" /> -->
             <p>آژانس دیزاین دیگرگون، همراهی برای ساخت آینده‌ی سازمانهاست.</p>
             <p>اگر می‌خواهید وارد یک بازار جدید شوید یا جایگاهتان را در بازار بهبود بدهید، دیگرگون، مسیری ساخته تا این استراتژی‌های جدید را در قالب خدمات و محصولات دیجیتال و فیزیکی و تجربیات یکپارچه از داخل سازمان تا مشتری طراحی کنید.</p>
             <p>ما متخصص طراحی و همراهی در پیاده‌سازیِ تجربیات یکپارچه هستیم. تجربیاتی که از داخل سازمان تا مشتریان با فرآیندهای کلیدی طراحی می‌شوند و آینده‌ی سازمان را می‌سازند.</p>
             <h3>بیست‌تاسی</h3>
-            <BistTaSiLogo  style="width: 20rem; height: 10rem;" />
+            <!-- <BistTaSiLogo  style="width: 20rem; height: 10rem;" /> -->
+                       <Svg 
+                slot='logo'
+          src={import(`/public/logos/bist-ta-si-logo.svg?raw`)}
+         style="width: 20rem; height: 10rem;"
+          />
             <p>بیست‌تا‌سی، مجموعه‌ای از فعالیت‌هاست برای همه آن‌هایی که در بیست تا سی سالگی عمر می‌گذرانند و مشتاق یادگیری، رشد و توسعه فردی، ارتقاء کیفیت زندگی خود و سایرین و آماده شدن برای آینده‌ای تاحدممکن شگفت‌انگیزند.</p>
             <p>ما در ۲۰ سالگی و بیست و چند سالگی گمان می‌کنیم «شغل بعداً سر می‌رسد، ازدواج بعداً اتفاق می‌افتد، بچه ها بعداً به دنیا می‌آیند، حتى مرگ بعداً به سراغ‌مان می‌آید»… دوره‌ای که هر بزرگسالی برای رسیدن به بزرگسالی خود، بی‌شک آن را تجربه و سپری کرده است و هر کودکی احتمالاً روزی آن را تجربه خواهد کرد. در شرایطی که بسیاری از ما تا سى سالگى کاری را شروع می‌کنیم، ازدواج می‌کنیم یا با شریک آینده زندگی خود آشنا می‌شویم , بیشترین تغییر شخصیت در قیاس با هر زمان دیگرى در زندگى طى دهه ٢٠ سالگى اتفاق مى‌افتد، آنگاه جای شگفتی بسیار است که چرا ۲۰ تا ۳۰ سالگی را جدی نمی‌گیریم.</p>
             <p>بیست‌تاسی می‌خواهد به این سؤال پاسخ دهد که چرا دوره بیست تا سی سالگی مهم است و چه می‌توان کرد تا این دوره مهم و کلیدی زندگی افراد، پربارتر و غنی‌تر از آن چیزی شود که می‌توان تصور کرد.</p>
             <p>بیست‌تا‌سی پر است از رویدادها یا محتواهایی که می‌توانید درآن‌ها تجربه‌های افراد محتلف را بشنوید و در مورد تجربه‌های خودتان نیز گفتگو کنید.</p>
             <p>بیست‌تا‌سی را می‌توانید از طریق شبکه‌های اجتماعی و پادکست کافه بیست‌تاسی (در پادگیرهای مختلف) دنبال کنید یا فقط کافی است «بیست‌تاسی» را گوگل کنید.</p>
             <h3>کاربن</h3>
-            <KarbonLogo style="width: 20rem; height: 10rem;" />
+            <!-- <KarbonLogo style="width: 20rem; height: 10rem;" /> -->
+                         <Svg 
+                slot='logo'
+          src={import(`/public/logos/karbon-logo.svg?raw`)}
+         style="width: 20rem; height: 10rem;"
+          />
             <p>کاربن تلاش می‌کند محتوای ناب و ارزش‌آفرین پدید آورد. در کاربن، یک کتاب فقط یک کتاب نیست و سرآغازی برای ماجراجویی است.</p>
           </section>
         </div>

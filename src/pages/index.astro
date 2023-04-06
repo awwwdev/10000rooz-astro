@@ -51,9 +51,8 @@ import PartnerCard from '../components/PartnerCard.astro';
       image: p.data.image,
     };
   });
-	console.log("🚀 ~ posts:", posts)
 
-	  const getBlogDataBySlug = (slug) => { return posts.find((post) => { return post.slug === slug; }); };
+	  const getBlogDataBySlug = (slug: string) => { return posts.find((post) => { return post.slug === slug; }); };
 ---
 
 <GlobalLayout 
