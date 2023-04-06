@@ -1,11 +1,10 @@
-import styles from '../../styles/loading-spinner.module.scss';
 
 const LoadingSpinner = ({
   size = 60, padding = '0', isFullHeight, as = 'div', className, style,
 }: propsTypes) => {
   return (
-    <div className={`${styles.div} ${className}`} style={style}>
-      <CgSpinner className={styles.icon} />
+    <div className={`spinner-wrapper ${className}`} style={style}>
+      <CgSpinner className="spinner-icon" />
     </div>
   );
 };

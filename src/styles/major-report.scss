@@ -1,0 +1,42 @@
+.downloadButton {
+  border-radius: var(--border-radius);
+  background-color: #21aa74;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: var(--padding--s);
+  width: 100%;
+  font-size: var(--font-size--l);
+  line-height: 1;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  gap: var(--gap--s);
+}
+
+.banner {
+  padding-block: var(--padding--xl);
+  background-color: var(--gray-3);
+  isolation: isolate;
+  position: relative;
+
+  &::before {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-image: url('/images/backgrounds/major-icons.svg');
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  h1 {
+    color: #21aa74;
+  }
+}

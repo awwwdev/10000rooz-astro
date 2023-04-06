@@ -27,6 +27,7 @@
     "recharts": "2.1.12"
   },
   "devDependencies": {
+    "@radix-ui/colors": "^0.1.8",
     "sass": "^1.60.0"
   }
 }

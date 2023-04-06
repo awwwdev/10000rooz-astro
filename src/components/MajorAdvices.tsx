@@ -5,7 +5,6 @@ import {
 
 import { Icon } from '../components/uikit';
 import { ArrowLeft, ArrowRight } from 'iconsax-react';
-import styles from '../styles/major-advice.module.scss';
 
 export async function getStaticProps() {
   return {
@@ -24,7 +23,7 @@ const MajorAdvices = () => {
 
   if (!adviceData) {
     return (
-      <div className={`${styles.pageWrapper} padding--page major-cat-clr max-width--page`}>
+      <div className="pageWrapper padding--page major-cat-clr max-width--page">
         <p>در حال دریافت داده</p>
       </div>
     );
@@ -119,12 +118,12 @@ const Table = ({ adviceData }) => {
 
   return (
 
-    <div className={`${styles.pageWrapper} padding--page major-cat-clr max-width--page`}>
-      <div className={`${styles.filtersWrapper} flex wrap gap padding-block--xs`}>
+    <div className={`pageWrapper padding--page major-cat-clr max-width--page`}>
+      <div className={`filtersWrapper flex wrap gap padding-block--xs`}>
         {/* <ColumnFilters headerGroups={headerGroups} /> */}
         <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       </div>
-      <table {...getTableProps()} className={styles.table}>
+      <table {...getTableProps()} className="table">
         <thead>
           {/* <tr>
               <tr colSpan={2} className="filter-rows" />
@@ -218,7 +217,7 @@ const GlobalFilter = ({ filter, setFilter }) => {
     setFilter(v || undefined);
   }, 1000);
   return (
-    <span className={styles.inputWrapper}>
+    <span className="inputWrapper">
       جستجو در جدول:
       <input
         placeholder="مثلا «معماری» "
@@ -227,7 +226,7 @@ const GlobalFilter = ({ filter, setFilter }) => {
           setValue(e.target.value);
           onChange(e.target.value);
         }}
-        className={styles.input}
+        className="input"
         size={1}
       />
     </span>
@@ -242,7 +241,7 @@ const ColumnFilter = ({ column }) => {
         placeholder="مثلا «برق»"
         value={filterValue || ''}
         onChange={(e) => { return setFilter(e.target.value); }}
-        className={styles.input}
+        className="input"
       // size={1}
       />
     </div>
@@ -254,7 +253,7 @@ const ColumnFilters = ({ headerGroups }) => {
     return (headerGroup.headers.map((column) => {
       if (column.Header !== 'رشته') return null;
       return (
-        <span className={styles.inputWrapper}>
+        <span className="inputWrapper">
           جستجو بین
           {' '}
           {column.render('Header')}

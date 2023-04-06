@@ -1,12 +1,12 @@
 // import { useRouter } from 'next/router';
-import styles from '@/styles/timeline.module.scss';
+// import styles from '@/styles/timeline.module.scss';
 // import { Link } from './uikit';
 
 const MajorArticleTimeline = ({ children = null }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className="timeline-wrapper">
       <h3 className='clr-white'>سری مقاله‌های انتخاب رشته</h3>
-      <ul className={styles.timeline}>
+      <ul className="timeline">
         <ListItem link='/choose-major'>چجوری انتخاب رشته کنم که پشیمون نشم؟</ListItem>
         <ListItem link='/surveys/major'>نگاهی داده‌محور به مسئلهٔ انتخاب رشته</ListItem>
         <ListItem link='/posts/get-help-with-choosing-major'>چگونه برای انتخاب رشته از دیگران اطلاعات بگیریم؟</ListItem>

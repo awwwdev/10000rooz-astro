@@ -7,6 +7,7 @@ specifiers:
   '@astrojs/sitemap': ^1.2.2
   '@jasikpark/astro-svg-loader': ^0.1.0
   '@nanostores/react': ^0.4.1
+  '@radix-ui/colors': ^0.1.8
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
   astro: ^2.2.0
@@ -36,6 +37,7 @@ dependencies:
   recharts: 2.1.12_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
+  '@radix-ui/colors': 0.1.8
   sass: 1.60.0
 
 packages:
@@ -772,6 +774,10 @@ packages:
       tiny-glob: 0.2.9
       tslib: 2.5.0
     dev: false
+
+  /@radix-ui/colors/0.1.8:
+    resolution: {integrity: sha512-jwRMXYwC0hUo0mv6wGpuw254Pd9p/R6Td5xsRpOmaWkUHlooNWqVcadgyzlRumMq3xfOTXwJReU0Jv+EIy4Jbw==}
+    dev: true
 
   /@rollup/pluginutils/5.0.2:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}

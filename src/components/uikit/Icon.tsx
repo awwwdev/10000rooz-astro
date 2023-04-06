@@ -1,5 +1,3 @@
-import React from 'react';
-import styles from '../../styles/icon.module.scss';
 
 type propsType = {
   name?: string;
