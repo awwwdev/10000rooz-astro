@@ -3,10 +3,10 @@
 import { getCollection } from 'astro:content';
 
 import GlobalLayout from 'src/layouts/GlobalLayout.astro';
-import ArticleCard from 'src/components/ArticleCard';
+import ArticleCard from 'src/components/ArticleCard.astro';
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	(a, b) => a.data.datePublished.valueOf() - b.data.datePublished.valueOf()
 );
 ---
 <GlobalLayout title="مقاله‌ها" description="همهٔ مقاله‌های ۱۰۰۰۰روز"  >
@@ -16,8 +16,8 @@ const posts = (await getCollection('blog')).sort(
 			{
 						posts.map((post) => (
 							    <ArticleCard
-                  title={post.title}
-                  excerpt={post.description}
+                  title={post.data.title}
+                  excerpt={post.data.description}
                   slug={post.slug}
                   link={`/posts/${post.slug}`}
                 />

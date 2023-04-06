@@ -1,10 +1,12 @@
 ---
-import ParkLogo from '@/public/logos/shariftechpark-logo.svg';
-import BanaLogo from '@/public/logos/bana-logo.svg';
-import DigargoonLogo from '@/public/logos/digargoon-logo.svg';
-import KarbonLogo from '@/public/logos/karbon-logo.svg';
-import BistTaSiLogo from '@/public/logos/bist-ta-si-logo.svg';
 import GlobalLayout from 'src/layouts/GlobalLayout.astro';
+
+const { default: ParkLogo } = await import(`/public/logos/shariftechpark-logo.svg?raw`);
+const { default: BanaLogo } = await import(`/public/logos/bana-logo.svg?raw`);
+const { default: DigargoonLogo } = await import(`/public/logos/digargoon-logo.svg?raw`);
+const { default: KarbonLogo } = await import(`/public/logos//karbon-logo.svg?raw`);
+const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.svg?raw`);
+
 ---
       <GlobalLayout
         title="حامیان و همراهان ۱۰۰۰۰روز"
