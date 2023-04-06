@@ -2,7 +2,7 @@
 const {
   name, description, Logo, link,
 } = Astro.props;
-
+import Svg from "@jasikpark/astro-svg-loader";
 ---
     <a
       href={link}
@@ -13,10 +13,8 @@ const {
     >
       <div class="sponsorCard">
         <div class="padding--xl" style="padding-bottom: 0;">
-          <Logo style={{
-            maxWidth: '20rem', maxHeight: '10rem', aspectRatio: '2/1', width: '100%', height: '100%',
-          }}
-          />
+        <slot name='logo' />
+          <!-- <Fragment set:html={Logo} /> -->
         </div>
         <p style="padding-bottom: var(--padding--xl); padding-inline: var(--padding--s);">{name}</p>
       </div>

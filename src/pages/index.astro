@@ -1,4 +1,6 @@
 ---
+import Svg from "@jasikpark/astro-svg-loader";
+
 import GlobalLayout from 'src/layouts/GlobalLayout.astro';
 // import ParkLogo from '@/public/logos/shariftechpark-logo.svg';
 // import BanaLogo from '@/public/logos/bana-logo.svg';
@@ -9,17 +11,16 @@ import GlobalLayout from 'src/layouts/GlobalLayout.astro';
 // import styles from '@/styles/home.module.scss';
 
 import { getCollection } from 'astro:content';
-import ArticleCard from 'src/components/ArticleCard.astro';
-import Banner from 'src/components/Home/Banner.astro';
-import ArticleSection from 'src/components/ArticleSection.astro';
-import SponsorCard from 'src/components/SponsorCard.astro';
-import PartnerCard from 'src/components/PartnerCard.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import Banner from '../components/Home/Banner.astro';
+import ArticleSection from '../components/ArticleSection.astro';
+import SponsorCard from '../components/SponsorCard.astro';
+import PartnerCard from '../components/PartnerCard.astro';
 
-const { default: ParkLogo } = await import(`/public/logos/shariftechpark-logo.svg?raw`);
-const { default: BanaLogo } = await import(`/public/logos/bana-logo.svg?raw`);
-const { default: DigargoonLogo } = await import(`/public/logos/digargoon-logo.svg?raw`);
-const { default: KarbonLogo } = await import(`/public/logos//karbon-logo.svg?raw`);
-const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.svg?raw`);
+// const { default: ParkLogo } = await import(`/public/logos/shariftechpark-logo.svg?raw`);
+// const { default: BanaLogo } = await import(`/public/logos/bana-logo.svg?raw`);
+// const { default: DigargoonLogo } = await import(`/public/logos/digargoon-logo.svg?raw`);
+// const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.svg?raw`);
 
  const selectedSlugs = [
     'choose-major',
@@ -43,13 +44,14 @@ const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.sv
 
 	const posts = (await getCollection('blog')).filter((p) => { return selectedSlugs.includes(p.slug); }).map((p) => {
     return {
-      title: p.title,
+      title: p.data.title,
       slug: p.slug,
-      description: p.description,
-      tags: p.tags,
-      image: p.image,
+      description: p.data.description,
+      tags: p.data.tags,
+      image: p.data.image,
     };
   });
+	console.log("🚀 ~ posts:", posts)
 
 	  const getBlogDataBySlug = (slug) => { return posts.find((post) => { return post.slug === slug; }); };
 ---
@@ -122,15 +124,25 @@ const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.sv
               <SponsorCard
                 name="پارک علم و فناوری دانشگاه صنعتی شریف"
                 description="حامی راه‌اندازی ۱۰۰۰۰روز"
-                Logo={ParkLogo}
                 link="https://techpark.sharif.ir/"
-              />
+              >
+                <Svg 
+                slot='logo'
+          src={import(`/public/logos/shariftechpark-logo.svg?raw`)}
+          style="max-width: 20rem; max-height: 10rem; aspect-ratio: 2/1; width: 100%; height: 100%;"
+          />
+            </SponsorCard>
               <SponsorCard
                 name="شتابدهنده استعداد بانا"
                 description="حامی گزارش انتخاب رشته"
-                Logo={BanaLogo}
                 link="https://banaacc.ir/"
-              />
+              >
+          <Svg 
+                slot='logo'
+          src={import(`/public/logos/bana-logo.svg?raw`)}
+          style="max-width: 20rem; max-height: 10rem; aspect-ratio: 2/1; width: 100%; height: 100%;"
+          />
+          </SponsorCard>
             </div>
           </section>
           <section aria-label="همراهان " class={`section layout:stack gap--xxl`}>
@@ -139,34 +151,43 @@ const { default: BistTaSiLogo } = await import(`/public/logos/bist-ta-si-logo.sv
               <PartnerCard
                 name="آژانس دیزاین دیگرگون "
                 description="همراه ۱۰۰۰۰روز"
-                Logo={DigargoonLogo}
                 link="https://digargoon.com/"
-              />
+              >
+   <Svg 
+                slot='logo'
+          src={import(`/public/logos/digargoon-logo.svg?raw`)}
+          style="max-width: 20rem; max-height: 10rem; aspect-ratio: 2/1; width: 100%; height: 100%;"
+          />
+            </PartnerCard>
               <PartnerCard
                 name="بیست‌تا‌سی"
                 description="همراه ۱۰۰۰۰روز"
-                Logo={BistTaSiLogo}
                 link="https://20ta30.com/"
-              />
+              >
+                 <Svg 
+                slot='logo'
+          src={import(`/public/logos/bist-ta-si-logo.svg?raw`)}
+          style="max-width: 20rem; max-height: 10rem; aspect-ratio: 2/1; width: 100%; height: 100%;"
+          />
+          </PartnerCard >
               <PartnerCard
                 name="کاربن"
                 description="همراه ۱۰۰۰۰روز"
-                Logo={KarbonLogo}
                 link="https://karbon.plus/"
-              />
+              >
+   <Svg 
+                slot='logo'
+          src={import(`/public/logos/karbon-logo.svg?raw`)}
+          style="max-width: 20rem; max-height: 10rem; aspect-ratio: 2/1; width: 100%; height: 100%;"
+          />
+        </PartnerCard>
             </div>
           </section>
         </div>
       </div>
 
 </GlobalLayout>
-<style lang="scss">
-
-
-
-
-
-
+<style lang="scss" is:global>
 .page {
   padding-block-end: var(--padding--xl);
 }

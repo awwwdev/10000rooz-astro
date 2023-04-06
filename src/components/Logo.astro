@@ -1,35 +1,37 @@
 ---
+import Svg from "@jasikpark/astro-svg-loader";
+
 export interface Props {
 }
 
-const { default: innerHTML } = await import(`/public/logos/10000rooz-logo-2.svg?raw`);
 ---
     <span class="logoImage">
-    <!-- <LogoSvg class="logoSvg" /> -->
-      <Fragment class='logoSvg' set:html={innerHTML} />
-
+         <Svg 
+          src={import(`/public/logos/10000rooz-logo-2.svg?raw`)}
+          class='logoSvg'
+          />
     </span>
-<style>
+<style lang='scss'>
   .logoImage {
-  height: max-content;
-  width: max-content;
+  // height: max-content;
+  // width: max-content;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   /* flex-direction:column; */
   gap: var(--gap);
-}
-
-.logoSvg {
-  width: 7.8rem;
-
-  @media screen and (max-width: 50rem) {
-    width: 6rem;
-  }
-
-  @media screen and (max-width: 20rem) {
-    width: 5rem;
+  
+  .logoSvg {
+    width: 7.8rem !important;
+    
+    @media screen and (max-width: 50rem) {
+      width: 6rem;
+    }
+    
+    @media screen and (max-width: 20rem) {
+      width: 5rem;
+    }
   }
 }
 </style>

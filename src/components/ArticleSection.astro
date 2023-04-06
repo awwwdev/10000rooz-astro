@@ -4,6 +4,7 @@ import ArticleCard from './ArticleCard.astro';
 const {
   title, slugs, getBlogDataBySlug, ...rest 
 } = Astro.props; 
+  console.log("🚀 ~ slugs:", slugs)
 
 ---
     <section aria-label={title} class={`section ${rest.class}`}>

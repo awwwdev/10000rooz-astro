@@ -11,7 +11,8 @@ const {
       rel="noreferrer"
       class="partnerCard flex column gap--l"
     >
-      <Logo style="width: 10rem; height: 5rem;" />
+      <!-- <Logo style="width: 10rem; height: 5rem;" /> -->
+      <slot name='logo' />
       <p class="font-size align:center">{name}</p>
       {/* <p className="bold">{description}</p> */}
     </a>
