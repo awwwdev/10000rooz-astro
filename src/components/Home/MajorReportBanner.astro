@@ -1,13 +1,13 @@
-export const MajorReportBanner = () => {
-  return (
-    <Link href="/surveys/major">
-      <section aria-label="مقدمه" className={`${styles.hero} full-width flex j-center a-center major-cat-clr`}>
-        <div className={`${styles.banner} 'flex column gap--xl max-width--page width--100 padding--l border-radius `}>
+---
+---
+    <a href="/surveys/major">
+      <section aria-label="مقدمه" className={`herofull-width flex j-center a-center major-cat-clr`}>
+        <div className={`banner 'flex column gap--xl max-width--page width--100 padding--l border-radius `}>
           {/* <h1 className={`${styles.websiteTitle, 'sr-only')}>۱۰۰۰۰روز</h1> */}
           {/* <p className={styles.bannerFirstSentence}>گزارش نظرسنجی انتخاب رشته منتشر شد!</p> */}
-          <div className={`${styles.wrapper} 'flex j-space-between a-center gap--s`}>
+          <div className={`wrapper flex j-space-between a-center gap--s`}>
             <div className="width--100">
-              <p className={styles.title}>
+              <p className={`title`}>
                 <span className="font-size--xl font-weight--800">
                   گزارش نظرسنجی
                 </span>
@@ -18,17 +18,15 @@ export const MajorReportBanner = () => {
                   منتشر شد!
                 </span>
               </p>
-              <div className={`${styles.button} flex j-center a-center gap--s margin-top--xxl`}>
+              <div className={`buttonflex j-center a-center gap--s margin-top--xxl`}>
                 <Icon icon={ReceiveSquare} alt="" />
                 دانلود رایگان گزارش
               </div>
             </div>
-            <div className={`${styles.graphShape}  flex desktop-only`} aria-hidden>
+            <div className={`graphShape  flex desktop-only`} aria-hidden>
               <img src="/images/sample-graph.svg" alt="" />
             </div>
           </div>
         </div>
       </section>
-    </Link>
-  );
-};
+    </a>

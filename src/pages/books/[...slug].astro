@@ -4,7 +4,7 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	return posts.filter((post) => { return (post.categories.includes('books')); }).map((post) => ({
+	return posts.filter((post) => { return (post.data.categories && post.data.categories.includes('books')); }).map((post) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));
