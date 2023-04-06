@@ -1,4 +1,4 @@
-import styles from '@/styles/loading-spinner.module.scss';
+import styles from '../../styles/loading-spinner.module.scss';
 
 const LoadingSpinner = ({
   size = 60, padding = '0', isFullHeight, as = 'div', className, style,

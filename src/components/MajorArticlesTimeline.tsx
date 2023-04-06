@@ -1,32 +1,18 @@
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import styles from '@/styles/timeline.module.scss';
-import { Link } from './uikit';
+// import { Link } from './uikit';
 
-const MajorArticleTimeline = ({
-  children = null,
-}) => {
+const MajorArticleTimeline = ({ children = null }) => {
   return (
     <div className={styles.wrapper}>
-      <h3 className="clr-white">
-        سری مقاله‌های انتخاب رشته
-      </h3>
+      <h3 className='clr-white'>سری مقاله‌های انتخاب رشته</h3>
       <ul className={styles.timeline}>
-        <ListItem link="/choose-major">
-          چجوری انتخاب رشته کنم که پشیمون نشم؟
-        </ListItem>
-        <ListItem link="/surveys/major">
-          نگاهی داده‌محور به مسئلهٔ انتخاب رشته
-        </ListItem>
-        <ListItem link="/posts/get-help-with-choosing-major">
-          چگونه برای انتخاب رشته از دیگران اطلاعات بگیریم؟
-        </ListItem>
-        <ListItem link="/posts/research-majors">
-          چگونه یک رشته را بهتر بشناسیم؟
-        </ListItem>
-        <ListItem link="/posts/admission-mechanism">
-          چگونه رشته‌ها در فرم انتخاب رشته بچینیم؟
-        </ListItem>
-        <ListItem link="/posts/comparing-universities">
+        <ListItem link='/choose-major'>چجوری انتخاب رشته کنم که پشیمون نشم؟</ListItem>
+        <ListItem link='/surveys/major'>نگاهی داده‌محور به مسئلهٔ انتخاب رشته</ListItem>
+        <ListItem link='/posts/get-help-with-choosing-major'>چگونه برای انتخاب رشته از دیگران اطلاعات بگیریم؟</ListItem>
+        <ListItem link='/posts/research-majors'>چگونه یک رشته را بهتر بشناسیم؟</ListItem>
+        <ListItem link='/posts/admission-mechanism'>چگونه رشته‌ها در فرم انتخاب رشته بچینیم؟</ListItem>
+        <ListItem link='/posts/comparing-universities'>
           مقایسهٔ انواع دانشگاه‌‌های ایران و نکاتی که بهتر است دربارهٔ هرکدام بدانید
         </ListItem>
         {children}
@@ -38,13 +24,13 @@ const MajorArticleTimeline = ({
 export default MajorArticleTimeline;
 
 const ListItem = ({ link, children }) => {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
-    <li className={`${styles.item} ${router.asPath === link && styles.currentPage}`}>
-      <Link href={link}>
-        {children}
-      </Link>
+    // <li className={`${styles.item}
+    //  ${router.asPath === link && styles.currentPage}`}>
+    <li className={`${styles.item}`}>
+      <a href={link}>{children}</a>
     </li>
   );
 };

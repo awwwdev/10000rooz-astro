@@ -3,9 +3,9 @@ import {
   useTable, useFilters, useGlobalFilter, useAsyncDebounce, usePagination,
 } from 'react-table';
 
-import { Icon } from '@/components/uikit';
+import { Icon } from '../components/uikit';
 import { ArrowLeft, ArrowRight } from 'iconsax-react';
-import styles from '@/styles/major-advice.module.scss';
+import styles from '../styles/major-advice.module.scss';
 
 export async function getStaticProps() {
   return {

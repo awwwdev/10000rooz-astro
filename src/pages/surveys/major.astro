@@ -1,11 +1,9 @@
 ---
-import { ReceiveSquare } from 'iconsax-react';
-import { Icon } from '@/components/uikit';
-import styles from '@/styles/major-report.module.scss';
-import MajorArticleTimeline from '@/components/MajorArticlesTimeline';
+
 import MajorAdvices from '../../components/MajorAdvices';
 import ReportWebVersion from '../../components/ReportWebVersion';
 import GlobalLayout from 'src/layouts/GlobalLayout.astro';
+import MajorArticleTimeline from 'src/components/MajorArticlesTimeline';
 const latestVersion = '1.1';
 
 ---
@@ -17,7 +15,7 @@ const latestVersion = '1.1';
       >
       <div class="layout-stack major-cat-clr">
         <article class="layout-stack" style="padding-bottom: var(--padding--xl);">
-          <section class={`${styles.banner} dark-theme`}>
+          <section class={`banner dark-theme`}>
             <div class="max-width--article flex column gap--s a-center">
               <h1 class="font-size--xxl">گزارش نظرسنجی انتخاب رشته</h1>
               <p class="font-size--xl font-weight--800 clr-white">
@@ -30,11 +28,11 @@ const latestVersion = '1.1';
               </p>
               <div class="flex j-center">
                 <a
-                  class={`${styles.downloadButton} margin-top--xl`}
+                  class={`downloadButton margin-top--xl`}
                   href="/reports/10000rooz-major-report.pdf"
                   download="10000rooz-major-report.pdf"
                 >
-                  <Icon icon={ReceiveSquare} alt="" />
+                  <!-- <Icon icon={ReceiveSquare} alt="" /> -->
                   دانلود رایگان گزارش
                 </a>
               </div>
@@ -89,9 +87,55 @@ const latestVersion = '1.1';
           </section>
           <section>
             <div class="max-width--page layout-stack-all  wp-article">
-              <MajorArticleTimeline />
+              <MajorArticleTimeline client:load />
             </div>
           </section>
         </article>
       </div>
       </GlobalLayout>
+
+      <style lang='scss'>
+
+        .downloadButton {
+  border-radius: var(--border-radius);
+  background-color: #21aa74;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: var(--padding--s);
+  width: 100%;
+  font-size: var(--font-size--l);
+  line-height: 1;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  gap: var(--gap--s);
+}
+
+.banner {
+  padding-block: var(--padding--xl);
+  background-color: var(--gray-3);
+  isolation: isolate;
+  position: relative;
+
+  &::before {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-image: url('/images/backgrounds/major-icons.svg');
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  h1 {
+    color: #21aa74;
+  }
+}
+      </style>
