@@ -1,4 +1,7 @@
 ---
+import '../../public/fonts/iransans/css/iransans.css';
+import '../../public/fonts/yekanbakhpro/css/yekanbakhpro.css';
+import '../../public/fonts/yekanbakhpro-fa-num/css/yekanbakhpro-fa-num.css';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -20,79 +23,78 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
       <slot />
     </main>
     <Footer />
-  </body><style lang='scss' is:global>
-  
+    <style lang='scss' is:global>
+      @import '../styles/global/variables/font-families.scss';
+      @import '../styles/global/variables/colors.scss';
+      @import '../styles/global/variables/radix-colors/white.scss';
+      @import '../styles/global/variables/radix-colors/black.scss';
+      @import '../styles/global/variables/radix-colors/light-theme.scss';
+      @import '../styles/global/variables/radix-colors/dark-theme.scss';
+      @import '../styles/global/variables/gradients.scss';
+      @import '../styles/global/variables/category-colors.scss';
+      @import '../styles/global/variables/components-colors.scss';
+      @import '../styles/global/variables/sizes.scss';
+      @import '../styles/global/variables/shadows.scss';
 
-    @import '../styles/global/variables/font-families.scss';
-    @import '../styles/global/variables/colors.scss';
-    @import '../styles/global/variables/radix-colors/white.scss';
-    @import '../styles/global/variables/radix-colors/black.scss';
-    @import '../styles/global/variables/radix-colors/light-theme.scss';
-    @import '../styles/global/variables/radix-colors/dark-theme.scss';
-    @import '../styles/global/variables/gradients.scss';
-    @import '../styles/global/variables/category-colors.scss';
-    @import '../styles/global/variables/components-colors.scss';
-    @import '../styles/global/variables/sizes.scss';
-    @import '../styles/global/variables/shadows.scss';
+      @import '../styles/global/reset.scss';
+      @import '../styles/global/base/typography.scss';
+      @import '../styles/global/base/site-layout.scss';
+      @import '../styles/global/base/base.scss';
+      @import '../styles/global/base/elements.scss';
+      @import '../styles/global/utility/layouts.scss';
+      @import '../styles/global/utility/atomic-classes.scss';
 
-    @import '../styles/global/reset.scss';
-    @import '../styles/global/base/typography.scss';
-    @import '../styles/global/base/site-layout.scss';
-    @import '../styles/global/base/base.scss';
-    @import '../styles/global/base/elements.scss';
-    @import '../styles/global/utility/layouts.scss';
-    @import '../styles/global/utility/atomic-classes.scss';
+      @import '../styles/global/overrides/wordpress.scss';
+      @import '../styles/global/development/development.scss';
 
-    @import '../styles/global/overrides/wordpress.scss';
-    @import '../styles/global/development/development.scss';
+      .spinner-wrapper {
+        padding: 1em;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          vertical-align: text-bottom;
+        }
+      }
 
-    .spinner-wrapper {
-      padding: 1em;
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      svg {
+      .spinner-icon {
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        animation: rotate 0.5s linear infinite;
+      }
+
+      .icon {
         vertical-align: text-bottom;
-      }
-    }
-
-    .spinner-icon {
-      @keyframes rotate {
-        from {
-          transform: rotate(0deg);
-        }
-
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      animation: rotate 0.5s linear infinite;
-    }
-
-    .icon {
-      vertical-align: text-bottom;
-      color: currentColor !important;
-
-      * {
         color: currentColor !important;
-      }
 
-      height: 1.25em;
-      width: 1.25em;
+        * {
+          color: currentColor !important;
+        }
 
-      /* * {
+        height: 1.25em;
+        width: 1.25em;
+
+        /* * {
     stroke-width: 2 !important;
 } */
-    }
+      }
 
-    .hasTextAfter {
-      margin-inline-start: 0.2em;
-      /* padding-top: 0.25em; */
-    }
+      .hasTextAfter {
+        margin-inline-start: 0.2em;
+        /* padding-top: 0.25em; */
+      }
 
-    .iconMirrored {
-      transform: scaleX(-1);
-    }
-  </style>
+      .iconMirrored {
+        transform: scaleX(-1);
+      }
+    </style>
+  </body>
 </html>
