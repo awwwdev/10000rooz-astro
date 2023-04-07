@@ -11,6 +11,7 @@ specifiers:
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
   astro: ^2.2.0
+  astro-color-scheme: ^1.0.1
   iconsax-react: ^0.0.8
   nanostores: ^0.7.4
   react: ^18.0.0
@@ -29,6 +30,7 @@ dependencies:
   '@types/react': 18.0.33
   '@types/react-dom': 18.0.11
   astro: 2.2.0_sass@1.60.0
+  astro-color-scheme: 1.0.1
   iconsax-react: 0.0.8_react@18.2.0
   nanostores: 0.7.4
   react: 18.2.0
@@ -1009,6 +1011,10 @@ packages:
   /astring/1.8.4:
     resolution: {integrity: sha512-97a+l2LBU3Op3bBQEff79i/E4jMD2ZLFD8rHx9B6mXyB2uQwhJQYfiDqUwtfjF4QA1F2qs//N6Cw8LetMbQjcw==}
     hasBin: true
+    dev: false
+
+  /astro-color-scheme/1.0.1:
+    resolution: {integrity: sha512-JaNBtS4AMTUnlUziFDJo1GMH945qoC1lGG0mQ4Pr6vklA3Irg5NjkJPHrQ8GbyMBm6xQKmzDFSaggwCQNj9SpA==}
     dev: false
 
   /astro/2.2.0_sass@1.60.0:

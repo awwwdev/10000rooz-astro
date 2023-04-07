@@ -1,4 +1,3 @@
-
 type propsType = {
   name?: string;
   icon: React.FC;
@@ -11,16 +10,32 @@ type propsType = {
   color?: string;
   variant?: 'Linear' | 'Outline' | 'TwoTone' | 'Bulk' | 'Broken' | 'Bold';
   [key: string]: any;
-}
+};
 
 const Icon = ({
-  icon, alt, style, className, hasNoTextAfter = false, isMirrored, size, color, variant, ...otherProps
+  icon,
+  alt,
+  style,
+  className,
+  hasNoTextAfter = false,
+  isMirrored,
+  size,
+  color,
+  variant,
+  ...otherProps
 }: propsType) => {
   const IconComponent = icon;
 
   return (
     <span>
-      <IconComponent size={size} color={color} variant={variant} className={`${styles.icon} ${!hasNoTextAfter ? styles.hasTextAfter : ''} ${isMirrored ? styles.mirrored : ''} ${className}`} style={style} {...otherProps} />
+      <IconComponent
+        size={size}
+        color={color}
+        variant={variant}
+        className={`icon ${!hasNoTextAfter ? 'hasTextAfter' : ''} ${isMirrored ? 'mirrored' : ''} ${className}`}
+        style={style}
+        {...otherProps}
+      />
     </span>
   );
 };
