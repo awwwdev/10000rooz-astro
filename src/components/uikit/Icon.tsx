@@ -27,16 +27,14 @@ const Icon = ({
   const IconComponent = icon;
 
   return (
-    <span>
-      <IconComponent
-        size={size}
-        color={color}
-        variant={variant}
-        className={`icon ${!hasNoTextAfter ? 'hasTextAfter' : ''} ${isMirrored ? 'mirrored' : ''} ${className}`}
-        style={style}
-        {...otherProps}
-      />
-    </span>
+    <IconComponent
+      size={size}
+      color={color}
+      variant={variant}
+      className={`icon ${!hasNoTextAfter ? 'hasTextAfter' : ''} ${isMirrored ? 'mirrored' : ''} ${className}`}
+      style={style}
+      {...otherProps}
+    />
   );
 };
 
