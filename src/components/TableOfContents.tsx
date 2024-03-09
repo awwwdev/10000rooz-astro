@@ -69,7 +69,7 @@ const TableOfContents: React.FC<{ headings: MarkdownHeading[] }> = ({
 	return (
 		<>
 			<h2 id={onThisPageID} className="heading">
-				On this page
+				فهرست
 			</h2>
 			<ul ref={toc}>
 				{headings
