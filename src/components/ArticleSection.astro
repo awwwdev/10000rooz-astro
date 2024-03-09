@@ -18,7 +18,6 @@ const {
         <div class="card-grid gap--l">
           {slugs.map((slug: string) => {
             const p = getBlogDataBySlug(slug);
-            console.log("🚀 ~ p:", p)
             return (
               <ArticleCard
                 title={p.title}

@@ -19,7 +19,6 @@ const percentageData = (data) => {
     processItem.name = item.name;
     return processItem;
   });
-  console.log('🚀 ~ processedArray', processedArray);
   return processedArray;
 };
 
