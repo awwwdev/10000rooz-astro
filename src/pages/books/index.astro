@@ -1,36 +1,41 @@
 ---
-
 import { getCollection } from 'astro:content';
 
 import GlobalLayout from 'src/layouts/GlobalLayout.astro';
 import ArticleCard from 'src/components/ArticleCard.astro';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.datePublished.valueOf() - b.data.datePublished.valueOf()
-);
+const posts = (await getCollection('blog'))
+  .filter((p) => {
+    return p.data.categories?.includes('books');
+  })
+  .sort((a, b) => a.data.datePublished.valueOf() - b.data.datePublished.valueOf());
 ---
-<GlobalLayout title="خلاصه‌کتاب‌ها" description="همهٔ خلاصه کتاب‌های ۱۰۰۰۰روز"  >
-     <section class="layout:stack padding-block--xl max-width--page ">
-        <h1>خلاصه کتاب‌ها</h1>
-        <p>
-          کتاب‌های بسیاری درباره موفقیت صحبت کرده‌اند. اما اکثرا توصیه‌های سلیقه‌ای و حرف‌های انگیزشی بدون پشتوانه هستند. کتاب‌هایی به طور تحلیلی و علمی درباره ساختن زندگی شغلی بهتری صحبت کرده باشند و توصیه‌های جواب پس داده و قابل اجرا داشته باشند زیاد نیستند. به همین خاطر در صددیم کتاب‌هایی ارزشمندی را که می‌شناسیم معرفی و در دسترس همه قرار دهیم. در اینجا برخی از این کتاب‌ها را معرفی یا ترجمه و فصل به فصل خلاصه کرده‌ایم.
-          در خلاصه‌های فصل به فصل، هر فصل از کتاب به صورت مجزا خلاصه شده‌ است و هیچ نکته‌ای از کتاب حذف نشده است. تنها مثال‌ها و توضیحاتی که نویسینده برای بیان بهتر نکاتش آورده حذف شده‌اند.
-          اگر کتابی می‌شناسید که جایش اینجا خالی است لطفا در صفحه «ارتباط با ما» (لینک در پاورقی) برای ترجمه و خلاصه شدن پیشنهاد کنید.
 
-        </p>
-        <ul class="card-grid gap--l">
-			{
-						posts.map((post) => (
-							    <ArticleCard
-                  title={post.data.title}
-                  excerpt={post.data.description}
-                  slug={post.slug}
-                  link={`/posts/${post.slug}`}
-                />
-						))
-					}
-				</ul>
-			</section>
+<GlobalLayout title='خلاصه‌کتاب‌ها' description='همهٔ خلاصه کتاب‌های ۱۰۰۰۰روز'>
+  <section class='layout:stack padding-block--xl max-width--page'>
+    <h1>خلاصه کتاب‌ها</h1>
+    <p>
+      کتاب‌های بسیاری درباره موفقیت صحبت کرده‌اند. اما اکثرا توصیه‌های سلیقه‌ای و حرف‌های انگیزشی بدون پشتوانه هستند.
+      کتاب‌هایی به طور تحلیلی و علمی درباره ساختن زندگی شغلی بهتری صحبت کرده باشند و توصیه‌های جواب پس داده و قابل اجرا
+      داشته باشند زیاد نیستند. به همین خاطر در صددیم کتاب‌هایی ارزشمندی را که می‌شناسیم معرفی و در دسترس همه قرار دهیم.
+      در اینجا برخی از این کتاب‌ها را معرفی یا ترجمه و فصل به فصل خلاصه کرده‌ایم. در خلاصه‌های فصل به فصل، هر فصل از
+      کتاب به صورت مجزا خلاصه شده‌ است و هیچ نکته‌ای از کتاب حذف نشده است. تنها مثال‌ها و توضیحاتی که نویسینده برای بیان
+      بهتر نکاتش آورده حذف شده‌اند. اگر کتابی می‌شناسید که جایش اینجا خالی است لطفا در صفحه «ارتباط با ما» (لینک در
+      پاورقی) برای ترجمه و خلاصه شدن پیشنهاد کنید.
+    </p>
+    <ul class='card-grid gap--l'>
+      {
+        posts.map((post) => (
+          <ArticleCard
+            title={post.data.title}
+            excerpt={post.data.description}
+            slug={post.slug}
+            link={`/posts/${post.slug}`}
+          />
+        ))
+      }
+    </ul>
+  </section>
 </GlobalLayout>
 <!-- <style>
 			ul {
