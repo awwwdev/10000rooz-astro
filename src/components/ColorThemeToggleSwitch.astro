@@ -1,12 +1,16 @@
 ---
 import { ThemeSwitch } from 'astro-color-scheme';
-import { Icon } from '@/components/uikit';
-import { Moon, Sun1 } from 'iconsax-react';
 ---
 
 <ThemeSwitch strategy='button'>
   <button type='button' class='color-switch-button'>
-    تم
+    <div class="flex ">
+      <span class=" i-ph-moon-fill w-1.5em h-1.5em dark-icon"></span>
+      <span class=" i-ph-sun-fill w-1.5em h-1.5em light-icon"></span>
+    </div>
+    <span class="sr-only">
+      تم
+    </span>
   </button>
 </ThemeSwitch>
 

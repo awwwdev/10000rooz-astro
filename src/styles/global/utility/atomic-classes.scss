@@ -260,7 +260,10 @@
     gap: var(--gap--xl); 
     grid-template-columns: repeat(auto-fill, minmax(min(var(--column-min-width), var(--max-width--page)), 1fr)); }
 
-.card { background: var(--clr-primary-3); color: var(--clr-gray-11); box-shadow: none; border-radius: var(--border-radius); max-width: 100%; overflow: hidden; 
+.card { background: var(--clr-primary-3); 
+    color: var(--clr-gray-12); 
+    box-shadow: none; 
+    border-radius: var(--border-radius); max-width: 100%; overflow: hidden; 
 
 
     .card-title { color: var(--clr-primary-11); }
