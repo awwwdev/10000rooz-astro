@@ -1,11 +1,9 @@
 - remove sponcers
-- fix books page 
 - fix Theme component
 - remove work with us
 - new banner
 - dynamic table of content for articles
 - tags page
 - reader toolbox
-- change font to estedad
 - remove Sharif Park 
 
